@@ -130,5 +130,10 @@ mod InfiniRewardsPoints {
             self.ownable.assert_only_owner();
             self.erc20.mint(recipient, amount);
         }
+
+        #[external(v0)]
+        fn get_details(ref self: ContractState) -> (ByteArray, ByteArray, ByteArray, u8, u256) {
+            (self.name.read(), self.symbol.read(), self.description.read(), self.decimals.read(), self.erc20.total_supply())
+        }
     }
 }
