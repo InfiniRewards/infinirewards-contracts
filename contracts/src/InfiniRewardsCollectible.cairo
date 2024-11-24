@@ -50,13 +50,14 @@ mod InfiniRewardsCollectible {
         ownable: OwnableComponent::Storage,
         #[substorage(v0)]
         upgradeable: UpgradeableComponent::Storage,
+        name: ByteArray,
         description: ByteArray,
-        is_membership: bool,
         points_contract: ContractAddress,
         token_ids: Vec::<u256>,
         token_prices: Map::<u256, u256>,
         token_expiries: Map::<u256, u64>,
         token_descriptions: Map::<u256, ByteArray>,
+        token_supplies: Map::<u256, u256>,
     }
 
     #[event]
@@ -81,7 +82,8 @@ mod InfiniRewardsCollectible {
         name: ByteArray,
         description: ByteArray
     ) {
-        self.erc1155.initializer(name);
+        self.name.write(name);
+        self.erc1155.initializer(self.name.read());
         self.ownable.initializer(owner);
         self.description.write(description);
     }
@@ -138,6 +140,8 @@ mod InfiniRewardsCollectible {
                 assert(self.erc1155.is_approved_for_all(account, caller), ERC1155Component::Errors::UNAUTHORIZED);
             }
             self.erc1155.burn(account, token_id, value);
+            let supply = self.token_supplies.entry(token_id).read();
+            self.token_supplies.entry(token_id).write(supply - value);
         }
 
         #[external(v0)]
@@ -152,6 +156,11 @@ mod InfiniRewardsCollectible {
                 assert(self.erc1155.is_approved_for_all(account, caller), ERC1155Component::Errors::UNAUTHORIZED);
             }
             self.erc1155.batch_burn(account, token_ids, values);
+            for i in 0..token_ids.len() {
+                let token_id = *token_ids.at(i);
+                let supply = self.token_supplies.entry(token_id).read();
+                self.token_supplies.entry(token_id).write(supply - *values.at(i));
+            };
         }
 
         #[external(v0)]
@@ -172,6 +181,8 @@ mod InfiniRewardsCollectible {
                 }
             };
             assert(token_exists, Errors::COLLECTIBLE_NOT_EXIST);
+            let supply = self.token_supplies.entry(token_id).read();
+            self.token_supplies.entry(token_id).write(supply + value);
             self.erc1155.mint_with_acceptance_check(account, token_id, value, data);
         }
 
@@ -184,6 +195,11 @@ mod InfiniRewardsCollectible {
             data: Span<felt252>,
         ) {
             self.ownable.assert_only_owner();
+            for i in 0..token_ids.len() {
+                let token_id = *token_ids.at(i);
+                let supply = self.token_supplies.entry(token_id).read();
+                self.token_supplies.entry(token_id).write(supply + *values.at(i));
+            };
             self.erc1155.batch_mint_with_acceptance_check(account, token_ids, values, data);
         }
 
@@ -223,13 +239,17 @@ mod InfiniRewardsCollectible {
             let current_timestamp: u64 = get_execution_info_syscall().unwrap().unbox().block_info.block_timestamp;
             assert(self.token_expiries.entry(token_id).read() > current_timestamp, Errors::COLLECTIBLE_EXPIRED);
             self.erc1155.burn(user, token_id, amount);
+            let supply = self.token_supplies.entry(token_id).read();
+            self.token_supplies.entry(token_id).write(supply - amount);
         }
 
         #[external(v0)]
         fn purchase(ref self: ContractState, user: ContractAddress, token_id: u256, amount: u256) {
             let current_timestamp: u64 = get_execution_info_syscall().unwrap().unbox().block_info.block_timestamp;
             assert(self.token_expiries.entry(token_id).read() > current_timestamp, Errors::COLLECTIBLE_EXPIRED);
+            assert(amount > 0, Errors::INVALID_AMOUNT);
             let price = self.token_prices.entry(token_id).read();
+            assert(price > 0, Errors::NOT_FOR_SALE);
             if price > 0 {
                 let points_contract = self.points_contract.read();
                 let points_to_deduct = price * amount;
@@ -241,29 +261,35 @@ mod InfiniRewardsCollectible {
                 let success = points_contract_dispatcher.burn(user, points_to_deduct);
                 assert(success, Errors::INSUFFICIENT_BALANCE);
             }
+            let supply = self.token_supplies.entry(token_id).read();
+            self.token_supplies.entry(token_id).write(supply + amount);
             self.erc1155.mint_with_acceptance_check(user, token_id, amount, ArrayTrait::new().span());
         }
 
         #[external(v0)]
-        fn get_details(self: @ContractState) -> (ByteArray, ContractAddress, Array::<u256>, Array::<u256>, Array::<u64>, Array::<ByteArray>) {
+        fn get_details(self: @ContractState) -> (ByteArray, ByteArray, ContractAddress, Array::<u256>, Array::<u256>, Array::<u64>, Array::<ByteArray>, Array::<u256>) {
             let mut token_ids: Array::<u256> = array![];
             let mut token_prices: Array::<u256> = array![];
             let mut token_expiries: Array::<u64> = array![];
             let mut token_descriptions: Array::<ByteArray> = array![];
+            let mut token_supplies: Array::<u256> = array![];
             for i in 0..self.token_ids.len() {
                 let token_id = self.token_ids.at(i).read();
                 token_ids.append(token_id);
                 token_prices.append(self.token_prices.entry(token_id).read());
                 token_expiries.append(self.token_expiries.entry(token_id).read());
                 token_descriptions.append(self.token_descriptions.entry(token_id).read());
+                token_supplies.append(self.token_supplies.entry(token_id).read());
             };
             (
+                self.name.read(),
                 self.description.read(),
                 self.points_contract.read(),
                 token_ids,
                 token_prices,
                 token_expiries,
-                token_descriptions
+                token_descriptions,
+                token_supplies
             )
         }
 

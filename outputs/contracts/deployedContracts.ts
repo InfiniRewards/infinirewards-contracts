@@ -89,6 +89,35 @@ const deployedContracts = {
           state_mutability: "external",
         },
         {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "get_details",
+          inputs: [],
+          outputs: [
+            {
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::byte_array::ByteArray, core::integer::u8, core::integer::u256)",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
           type: "impl",
           name: "ERC20MixinImpl",
           interface_name: "openzeppelin_token::erc20::interface::ERC20ABI",
@@ -104,24 +133,6 @@ const deployedContracts = {
             {
               name: "True",
               type: "()",
-            },
-          ],
-        },
-        {
-          type: "struct",
-          name: "core::byte_array::ByteArray",
-          members: [
-            {
-              name: "data",
-              type: "core::array::Array::<core::bytes_31::bytes31>",
-            },
-            {
-              name: "pending_word",
-              type: "core::felt252",
-            },
-            {
-              name: "pending_word_len",
-              type: "core::integer::u32",
             },
           ],
         },
@@ -925,7 +936,7 @@ const deployedContracts = {
           inputs: [],
           outputs: [
             {
-              type: "(core::byte_array::ByteArray, core::starknet::contract_address::ContractAddress, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>)",
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::starknet::contract_address::ContractAddress, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>, core::array::Array::<core::integer::u256>)",
             },
           ],
           state_mutability: "view",
@@ -1679,7 +1690,7 @@ const deployedContracts = {
     },
     InfiniRewardsFactory: {
       address:
-        "0x4b7c1f06141a8e2c435dce1f192bf92ac11febfef5a17665ad67a2922aaeff7",
+        "0x2ff4444b5dbcb93fc1a222167ab91445b5c8ba1573b8c6a68b0463318b214ec",
       abi: [
         {
           type: "impl",
@@ -1790,44 +1801,8 @@ const deployedContracts = {
         },
         {
           type: "function",
-          name: "get_user_account",
-          inputs: [
-            {
-              name: "phone_number_hash",
-              type: "core::felt252",
-            },
-          ],
-          outputs: [
-            {
-              type: "core::starknet::contract_address::ContractAddress",
-            },
-          ],
-          state_mutability: "view",
-        },
-        {
-          type: "function",
-          name: "get_merchant_account",
-          inputs: [
-            {
-              name: "phone_number_hash",
-              type: "core::felt252",
-            },
-          ],
-          outputs: [
-            {
-              type: "core::starknet::contract_address::ContractAddress",
-            },
-          ],
-          state_mutability: "view",
-        },
-        {
-          type: "function",
           name: "create_points_contract",
           inputs: [
-            {
-              name: "merchant",
-              type: "core::starknet::contract_address::ContractAddress",
-            },
             {
               name: "name",
               type: "core::byte_array::ByteArray",
@@ -2178,7 +2153,7 @@ const deployedContracts = {
         },
       ],
       classHash:
-        "0x62bbc1b4b37a1e1075570d0606c7af80e553ece7d4010fee6395e8e0764b724",
+        "0xc4f5d11ee0eeec1c36ff3add191e37e88601ccf232e6033d0fefcb40ebc2d9",
     },
   },
   sepolia: {
@@ -2266,6 +2241,35 @@ const deployedContracts = {
           state_mutability: "external",
         },
         {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "get_details",
+          inputs: [],
+          outputs: [
+            {
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::byte_array::ByteArray, core::integer::u8, core::integer::u256)",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
           type: "impl",
           name: "ERC20MixinImpl",
           interface_name: "openzeppelin_token::erc20::interface::ERC20ABI",
@@ -2281,24 +2285,6 @@ const deployedContracts = {
             {
               name: "True",
               type: "()",
-            },
-          ],
-        },
-        {
-          type: "struct",
-          name: "core::byte_array::ByteArray",
-          members: [
-            {
-              name: "data",
-              type: "core::array::Array::<core::bytes_31::bytes31>",
-            },
-            {
-              name: "pending_word",
-              type: "core::felt252",
-            },
-            {
-              name: "pending_word_len",
-              type: "core::integer::u32",
             },
           ],
         },
@@ -3102,7 +3088,7 @@ const deployedContracts = {
           inputs: [],
           outputs: [
             {
-              type: "(core::byte_array::ByteArray, core::starknet::contract_address::ContractAddress, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>)",
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::starknet::contract_address::ContractAddress, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>, core::array::Array::<core::integer::u256>)",
             },
           ],
           state_mutability: "view",
@@ -3967,44 +3953,8 @@ const deployedContracts = {
         },
         {
           type: "function",
-          name: "get_user_account",
-          inputs: [
-            {
-              name: "phone_number_hash",
-              type: "core::felt252",
-            },
-          ],
-          outputs: [
-            {
-              type: "core::starknet::contract_address::ContractAddress",
-            },
-          ],
-          state_mutability: "view",
-        },
-        {
-          type: "function",
-          name: "get_merchant_account",
-          inputs: [
-            {
-              name: "phone_number_hash",
-              type: "core::felt252",
-            },
-          ],
-          outputs: [
-            {
-              type: "core::starknet::contract_address::ContractAddress",
-            },
-          ],
-          state_mutability: "view",
-        },
-        {
-          type: "function",
           name: "create_points_contract",
           inputs: [
-            {
-              name: "merchant",
-              type: "core::starknet::contract_address::ContractAddress",
-            },
             {
               name: "name",
               type: "core::byte_array::ByteArray",

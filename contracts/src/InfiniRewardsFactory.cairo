@@ -39,8 +39,8 @@ mod InfiniRewardsFactory {
         infini_rewards_collectible_hash: ClassHash,
         infini_rewards_user_account_hash: ClassHash,
         infini_rewards_merchant_account_hash: ClassHash,
-        user_accounts: Map::<felt252, ContractAddress>,
-        merchant_accounts: Map::<felt252, ContractAddress>,
+        // user_accounts: Map::<felt252, ContractAddress>,
+        // merchant_accounts: Map::<felt252, ContractAddress>,
     }
 
     #[event]
@@ -113,7 +113,7 @@ mod InfiniRewardsFactory {
             public_key: felt252,
             phone_number_hash: felt252
         ) -> ContractAddress {
-            assert(self.user_accounts.read(phone_number_hash).is_zero(), 'User already exists');
+            // assert(self.user_accounts.read(phone_number_hash).is_zero(), 'User already exists');
             
             let mut constructor_calldata = ArrayTrait::new();
             public_key.serialize(ref constructor_calldata);
@@ -122,7 +122,7 @@ mod InfiniRewardsFactory {
                     self.infini_rewards_user_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
                     .expect('failed to deploy account');
-            self.user_accounts.write(phone_number_hash, new_account);
+            // self.user_accounts.write(phone_number_hash, new_account);
             
             self.emit(UserCreated { user: new_account, phone_number_hash });
             new_account
@@ -138,7 +138,7 @@ mod InfiniRewardsFactory {
             decimals: u8
         ) -> (ContractAddress, ContractAddress) {
             // Create user account first
-            assert(self.merchant_accounts.read(phone_number_hash).is_zero(), 'Merchant already exists');
+            // assert(self.merchant_accounts.read(phone_number_hash).is_zero(), 'Merchant already exists');
             
             let mut constructor_calldata = ArrayTrait::new();
             public_key.serialize(ref constructor_calldata);
@@ -147,7 +147,7 @@ mod InfiniRewardsFactory {
                     self.infini_rewards_merchant_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
                     .expect('failed to deploy account');
-            self.merchant_accounts.write(phone_number_hash, merchant);
+            // self.merchant_accounts.write(phone_number_hash, merchant);
             
 
             // Deploy Points Contract within Merchant Account
@@ -188,26 +188,26 @@ mod InfiniRewardsFactory {
             (merchant, points_contract)
         }
 
-        #[external(v0)]
-        fn get_user_account(self: @ContractState, phone_number_hash: felt252) -> ContractAddress {
-            self.user_accounts.read(phone_number_hash)
-        }
+        // #[external(v0)]
+        // fn get_user_account(self: @ContractState, phone_number_hash: felt252) -> ContractAddress {
+        //     self.user_accounts.read(phone_number_hash)
+        // }
 
-        #[external(v0)]
-        fn get_merchant_account(self: @ContractState, phone_number_hash: felt252) -> ContractAddress {
-            self.merchant_accounts.read(phone_number_hash)
-        }
+        // #[external(v0)]
+        // fn get_merchant_account(self: @ContractState, phone_number_hash: felt252) -> ContractAddress {
+        //     self.merchant_accounts.read(phone_number_hash)
+        // }
 
         #[external(v0)]
         fn create_points_contract(
             ref self: ContractState,
-            merchant: ContractAddress,
             name: ByteArray,
             symbol: ByteArray,
             description: ByteArray,
             decimals: u8
         ) -> ContractAddress {           
             let mut constructor_calldata = ArrayTrait::new();
+            let merchant: ContractAddress = get_caller_address();
             merchant.serialize(ref constructor_calldata);
             name.serialize(ref constructor_calldata);
             symbol.serialize(ref constructor_calldata);
