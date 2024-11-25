@@ -7,9 +7,8 @@ mod InfiniRewardsFactory {
     use openzeppelin::upgrades::UpgradeableComponent;
     use openzeppelin::upgrades::interface::IUpgradeable;
     use core::starknet::{ClassHash, ContractAddress, get_caller_address};
-    use core::num::traits::Zero;
     use starknet::storage::{
-        StoragePointerReadAccess, StoragePointerWriteAccess, Map
+        StoragePointerReadAccess, StoragePointerWriteAccess
     };
     use starknet::syscalls::deploy_syscall;
     use contracts::interfaces::IInfiniRewardsMerchantAccount::{IInfiniRewardsMerchantAccountDispatcherTrait, IInfiniRewardsMerchantAccountDispatcher};
@@ -54,6 +53,8 @@ mod InfiniRewardsFactory {
         UpgradeableEvent: UpgradeableComponent::Event,
         UserCreated: UserCreated,
         MerchantCreated: MerchantCreated,
+        PointsCreated: PointsCreated,
+        CollectibleCreated: CollectibleCreated,
     }
 
     #[derive(Drop, starknet::Event)]
@@ -66,6 +67,18 @@ mod InfiniRewardsFactory {
     struct MerchantCreated {
         merchant: ContractAddress,
         points_contract: ContractAddress,
+    }
+
+    #[derive(Drop, starknet::Event)]
+    struct PointsCreated {
+        points_contract: ContractAddress,
+        merchant: ContractAddress,
+    }
+
+    #[derive(Drop, starknet::Event)]
+    struct CollectibleCreated {
+        collectible_contract: ContractAddress,
+        merchant: ContractAddress,
     }
 
     #[constructor]
@@ -184,7 +197,7 @@ mod InfiniRewardsFactory {
             // // Initialize merchant account with collectible contract
             // merchant_account_instance.add_collectible_contract(collectible_contract);
 
-            // self.emit(MerchantCreated { merchant, points_contract });
+            self.emit(MerchantCreated { merchant, points_contract });
             (merchant, points_contract)
         }
 
@@ -219,6 +232,7 @@ mod InfiniRewardsFactory {
                     .expect('failed to deploy points');
             let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
             merchant_account_instance.add_points_contract(new_contract);
+            self.emit(PointsCreated { points_contract: new_contract, merchant });
             new_contract
         }
 
@@ -243,6 +257,7 @@ mod InfiniRewardsFactory {
 
             let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
             merchant_account_instance.add_collectible_contract(new_contract);
+            self.emit(CollectibleCreated { collectible_contract: new_contract, merchant });
             new_contract
         }
     }

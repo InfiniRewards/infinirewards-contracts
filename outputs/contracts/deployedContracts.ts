@@ -3842,7 +3842,7 @@ const deployedContracts = {
     },
     InfiniRewardsFactory: {
       address:
-        "0x6ca6c328cc9109da14f5bc769dcf19bc49f743c4fc4c3f633fa7c7f4909718b",
+        "0x289875671cbc4a605349a89d1e828ba000e1cef6f685359bb11f2e1baabd313",
       abi: [
         {
           type: "impl",
@@ -4305,7 +4305,7 @@ const deployedContracts = {
         },
       ],
       classHash:
-        "0x1878092c35ea5a71a9c793f0e0ced1035fef23b29c6943a62f4066852249bd1",
+        "0xc4f5d11ee0eeec1c36ff3add191e37e88601ccf232e6033d0fefcb40ebc2d9",
     },
   },
 } as const;
