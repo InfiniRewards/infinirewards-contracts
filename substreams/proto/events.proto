@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package starknet.v1;
+
+message MerchantContract {
+  string merchant_address = 1;
+  string points_contract = 2;
+}
+
+message Events {
+  repeated MerchantContract merchant_contracts = 1;
+}

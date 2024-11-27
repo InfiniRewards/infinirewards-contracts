@@ -2121,6 +2121,40 @@ const deployedContracts = {
         },
         {
           type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::PointsCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "points_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "collectible_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
           name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::Event",
           kind: "enum",
           variants: [
@@ -2147,6 +2181,16 @@ const deployedContracts = {
             {
               name: "MerchantCreated",
               type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::MerchantCreated",
+              kind: "nested",
+            },
+            {
+              name: "PointsCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::PointsCreated",
+              kind: "nested",
+            },
+            {
+              name: "CollectibleCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
               kind: "nested",
             },
           ],
@@ -3842,7 +3886,7 @@ const deployedContracts = {
     },
     InfiniRewardsFactory: {
       address:
-        "0x289875671cbc4a605349a89d1e828ba000e1cef6f685359bb11f2e1baabd313",
+        "0x6c0b75d53c757cc1979d3aaa9482ac449ae0dfd1e5a9807b24478cf4da2d5f8",
       abi: [
         {
           type: "impl",
@@ -4273,6 +4317,40 @@ const deployedContracts = {
         },
         {
           type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::PointsCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "points_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "collectible_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
           name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::Event",
           kind: "enum",
           variants: [
@@ -4301,11 +4379,21 @@ const deployedContracts = {
               type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::MerchantCreated",
               kind: "nested",
             },
+            {
+              name: "PointsCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::PointsCreated",
+              kind: "nested",
+            },
+            {
+              name: "CollectibleCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
+              kind: "nested",
+            },
           ],
         },
       ],
       classHash:
-        "0xc4f5d11ee0eeec1c36ff3add191e37e88601ccf232e6033d0fefcb40ebc2d9",
+        "0x3fd96ccc3f327483765dc1d32db4104a03a0eda7be7013fc17915dc5caf852c",
     },
   },
 } as const;
