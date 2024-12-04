@@ -1,6 +1,0 @@
-type Merchant @entity {
-  id: ID!
-  merchantAddress: String!
-  pointsContract: String!
-  createdAt: BigInt!
-}

@@ -41,7 +41,7 @@ mod InfiniRewardsPoints {
         upgradeable: UpgradeableComponent::Storage,
         name: ByteArray,
         symbol: ByteArray,
-        description: ByteArray,
+        metadata: ByteArray,
         decimals: u8,
     }
 
@@ -64,7 +64,7 @@ mod InfiniRewardsPoints {
         owner: ContractAddress,
         name: ByteArray,
         symbol: ByteArray,
-        description: ByteArray,
+        metadata: ByteArray,
         decimals: u8
     ) {
         let name_clone = name.clone();
@@ -73,7 +73,7 @@ mod InfiniRewardsPoints {
         self.ownable.initializer(owner);
         self.name.write(name);
         self.symbol.write(symbol);
-        self.description.write(description);
+        self.metadata.write(metadata);
         self.decimals.write(decimals);
     }
 
@@ -133,7 +133,7 @@ mod InfiniRewardsPoints {
 
         #[external(v0)]
         fn get_details(ref self: ContractState) -> (ByteArray, ByteArray, ByteArray, u8, u256) {
-            (self.name.read(), self.symbol.read(), self.description.read(), self.decimals.read(), self.erc20.total_supply())
+            (self.name.read(), self.symbol.read(), self.metadata.read(), self.decimals.read(), self.erc20.total_supply())
         }
     }
 }

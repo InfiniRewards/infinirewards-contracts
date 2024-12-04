@@ -51,12 +51,12 @@ mod InfiniRewardsCollectible {
         #[substorage(v0)]
         upgradeable: UpgradeableComponent::Storage,
         name: ByteArray,
-        description: ByteArray,
+        metadata: ByteArray,
         points_contract: ContractAddress,
         token_ids: Vec::<u256>,
         token_prices: Map::<u256, u256>,
         token_expiries: Map::<u256, u64>,
-        token_descriptions: Map::<u256, ByteArray>,
+        token_metadatas: Map::<u256, ByteArray>,
         token_supplies: Map::<u256, u256>,
     }
 
@@ -80,12 +80,12 @@ mod InfiniRewardsCollectible {
         ref self: ContractState,
         owner: ContractAddress,
         name: ByteArray,
-        description: ByteArray
+        metadata: ByteArray
     ) {
         self.name.write(name);
         self.erc1155.initializer(self.name.read());
         self.ownable.initializer(owner);
-        self.description.write(description);
+        self.metadata.write(metadata);
     }
 
     impl ERC1155HooksImpl of ERC1155Component::ERC1155HooksTrait<ContractState> {
@@ -210,7 +210,7 @@ mod InfiniRewardsCollectible {
         }
 
         #[external(v0)]
-        fn set_token_data(ref self: ContractState, token_id: u256, points_contract: ContractAddress, price: u256, expiry: u64, description: ByteArray) {
+        fn set_token_data(ref self: ContractState, token_id: u256, points_contract: ContractAddress, price: u256, expiry: u64, metadata: ByteArray) {
             self.ownable.assert_only_owner();
             self.points_contract.write(points_contract);
             let mut token_exists:bool = false;
@@ -226,12 +226,12 @@ mod InfiniRewardsCollectible {
             }
             self.token_prices.entry(token_id).write(price);
             self.token_expiries.entry(token_id).write(expiry);
-            self.token_descriptions.entry(token_id).write(description);
+            self.token_metadatas.entry(token_id).write(metadata);
         }
 
         #[external(v0)]
         fn get_token_data(ref self: ContractState, token_id: u256) -> (ContractAddress, u256, u64, ByteArray) {
-            (self.points_contract.read(), self.token_prices.entry(token_id).read(), self.token_expiries.entry(token_id).read(), self.token_descriptions.entry(token_id).read())
+            (self.points_contract.read(), self.token_prices.entry(token_id).read(), self.token_expiries.entry(token_id).read(), self.token_metadatas.entry(token_id).read())
         }
 
         #[external(v0)]
@@ -271,24 +271,24 @@ mod InfiniRewardsCollectible {
             let mut token_ids: Array::<u256> = array![];
             let mut token_prices: Array::<u256> = array![];
             let mut token_expiries: Array::<u64> = array![];
-            let mut token_descriptions: Array::<ByteArray> = array![];
+            let mut token_metadatas: Array::<ByteArray> = array![];
             let mut token_supplies: Array::<u256> = array![];
             for i in 0..self.token_ids.len() {
                 let token_id = self.token_ids.at(i).read();
                 token_ids.append(token_id);
                 token_prices.append(self.token_prices.entry(token_id).read());
                 token_expiries.append(self.token_expiries.entry(token_id).read());
-                token_descriptions.append(self.token_descriptions.entry(token_id).read());
+                token_metadatas.append(self.token_metadatas.entry(token_id).read());
                 token_supplies.append(self.token_supplies.entry(token_id).read());
             };
             (
                 self.name.read(),
-                self.description.read(),
+                self.metadata.read(),
                 self.points_contract.read(),
                 token_ids,
                 token_prices,
                 token_expiries,
-                token_descriptions,
+                token_metadatas,
                 token_supplies
             )
         }
