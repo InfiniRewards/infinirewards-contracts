@@ -201,16 +201,6 @@ mod InfiniRewardsFactory {
             (merchant, points_contract)
         }
 
-        // #[external(v0)]
-        // fn get_user_account(self: @ContractState, phone_number_hash: felt252) -> ContractAddress {
-        //     self.user_accounts.read(phone_number_hash)
-        // }
-
-        // #[external(v0)]
-        // fn get_merchant_account(self: @ContractState, phone_number_hash: felt252) -> ContractAddress {
-        //     self.merchant_accounts.read(phone_number_hash)
-        // }
-
         #[external(v0)]
         fn create_points_contract(
             ref self: ContractState,
@@ -259,6 +249,50 @@ mod InfiniRewardsFactory {
             merchant_account_instance.add_collectible_contract(new_contract);
             self.emit(CollectibleCreated { collectible_contract: new_contract, merchant });
             new_contract
+        }
+
+        #[external(v0)]
+        fn get_user_class_hash(self: @ContractState) -> ClassHash {
+            self.infini_rewards_user_account_hash.read()
+        }
+
+        #[external(v0)]
+        fn set_user_class_hash(ref self: ContractState, class_hash: ClassHash) {
+            self.ownable.assert_only_owner();
+            self.infini_rewards_user_account_hash.write(class_hash);
+        }
+
+        #[external(v0)]
+        fn get_merchant_class_hash(self: @ContractState) -> ClassHash {
+            self.infini_rewards_merchant_account_hash.read()
+        }
+
+        #[external(v0)]
+        fn set_merchant_class_hash(ref self: ContractState, class_hash: ClassHash) {
+            self.ownable.assert_only_owner();
+            self.infini_rewards_merchant_account_hash.write(class_hash);
+        }
+
+        #[external(v0)]
+        fn get_points_class_hash(self: @ContractState) -> ClassHash {
+            self.infini_rewards_points_hash.read()
+        }
+
+        #[external(v0)]
+        fn set_points_class_hash(ref self: ContractState, class_hash: ClassHash) {
+            self.ownable.assert_only_owner();
+            self.infini_rewards_points_hash.write(class_hash);
+        }
+
+        #[external(v0)]
+        fn get_collectible_class_hash(self: @ContractState) -> ClassHash {
+            self.infini_rewards_collectible_hash.read()
+        }
+
+        #[external(v0)]
+        fn set_collectible_class_hash(ref self: ContractState, class_hash: ClassHash) {
+            self.ownable.assert_only_owner();
+            self.infini_rewards_collectible_hash.write(class_hash);
         }
     }
 }
