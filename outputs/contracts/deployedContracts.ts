@@ -115,7 +115,7 @@ const deployedContracts = {
               type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::byte_array::ByteArray, core::integer::u8, core::integer::u256)",
             },
           ],
-          state_mutability: "external",
+          state_mutability: "view",
         },
         {
           type: "impl",
@@ -436,7 +436,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
             {
@@ -867,7 +867,7 @@ const deployedContracts = {
               type: "core::integer::u64",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
           ],
@@ -1395,7 +1395,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
           ],
@@ -1845,6 +1845,98 @@ const deployedContracts = {
               type: "core::starknet::contract_address::ContractAddress",
             },
           ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_user_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_user_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_merchant_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_merchant_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_points_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_points_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_collectible_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_collectible_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
           state_mutability: "external",
         },
         {
@@ -2311,7 +2403,7 @@ const deployedContracts = {
               type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::byte_array::ByteArray, core::integer::u8, core::integer::u256)",
             },
           ],
-          state_mutability: "external",
+          state_mutability: "view",
         },
         {
           type: "impl",
@@ -2632,7 +2724,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
             {
@@ -3063,7 +3155,7 @@ const deployedContracts = {
               type: "core::integer::u64",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
           ],
@@ -3591,7 +3683,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
           ],
@@ -4041,6 +4133,98 @@ const deployedContracts = {
               type: "core::starknet::contract_address::ContractAddress",
             },
           ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_user_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_user_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_merchant_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_merchant_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_points_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_points_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_collectible_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_collectible_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
           state_mutability: "external",
         },
         {

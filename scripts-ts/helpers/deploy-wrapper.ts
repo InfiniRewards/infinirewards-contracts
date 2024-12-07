@@ -3,11 +3,12 @@ import yargs from "yargs";
 import { execSync } from "child_process";
 
 interface CommandLineOptions {
-  _: string[]; // Non-hyphenated arguments are usually under the `_` key
-  $0: string; // The script name or path is under the `$0` key
-  network?: string; // The --network option
+  _: string[];
+  $0: string;
+  network?: string;
   reset?: boolean;
   fee?: string;
+  declare?: boolean;
 }
 
 const argv = yargs(process.argv.slice(2))
@@ -15,17 +16,21 @@ const argv = yargs(process.argv.slice(2))
     network: { type: "string" },
     reset: { type: "boolean", default: false },
     fee: { type: "string", choices: ["eth", "strk"], default: "eth" },
+    declare: { type: "boolean", default: false },
   })
   .parseSync() as CommandLineOptions;
 
-// Set the NETWORK environment variable based on the --network argument
+// Set environment variables
 process.env.NETWORK = argv.network || "devnet";
 process.env.FEE_TOKEN = argv.fee || "eth";
-// Set the RESET environment variable based on the --reset flag
 
-// Execute the deploy script
+// Choose which script to run based on the --declare flag
+const scriptToRun = argv.declare ? "declare.ts" : "deploy.ts";
+
+// Execute the selected script
 execSync(
-  "cd contracts && scarb build && ts-node ../scripts-ts/deploy.ts" +
+  "cd contracts && scarb build && ts-node ../scripts-ts/" + 
+    scriptToRun +
     " --network " +
     process.env.NETWORK +
     " --fee " +
