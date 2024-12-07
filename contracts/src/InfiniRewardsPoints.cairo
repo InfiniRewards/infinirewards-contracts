@@ -132,7 +132,7 @@ mod InfiniRewardsPoints {
         }
 
         #[external(v0)]
-        fn get_details(ref self: ContractState) -> (ByteArray, ByteArray, ByteArray, u8, u256) {
+        fn get_details(self: @ContractState) -> (ByteArray, ByteArray, ByteArray, u8, u256) {
             (self.name.read(), self.symbol.read(), self.metadata.read(), self.decimals.read(), self.erc20.total_supply())
         }
     }
