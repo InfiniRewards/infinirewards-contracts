@@ -1812,7 +1812,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
             {
@@ -1836,7 +1836,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
           ],
@@ -4100,7 +4100,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
             {
@@ -4124,7 +4124,7 @@ const deployedContracts = {
               type: "core::byte_array::ByteArray",
             },
             {
-              name: "description",
+              name: "metadata",
               type: "core::byte_array::ByteArray",
             },
           ],

@@ -160,16 +160,15 @@ mod InfiniRewardsFactory {
                     self.infini_rewards_merchant_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
                     .expect('failed to deploy account');
-            // self.merchant_accounts.write(phone_number_hash, merchant);
-            
 
             // Deploy Points Contract within Merchant Account
             let mut points_calldata = ArrayTrait::new();
             merchant.serialize(ref points_calldata);
             name.serialize(ref points_calldata);
             symbol.serialize(ref points_calldata);
-            let description: ByteArray = "Default Points";
-            description.serialize(ref points_calldata);
+            let mut metadata = Default::default();
+            metadata.append_word(0xb900016b6465736372697074696f6e6e44656661756c7420506f696e7473, 30); // Default Points Metadata: {"description":"Default Points"}
+            metadata.serialize(ref points_calldata);
             decimals.serialize(ref points_calldata);
             let (points_contract, _) = deploy_syscall(
                     self.infini_rewards_points_hash.read(), 
@@ -181,21 +180,6 @@ mod InfiniRewardsFactory {
             // Initialize merchant account with points contract
             let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
             merchant_account_instance.add_points_contract(points_contract);
-            
-            // // Deploy Collectible Contract within Merchant Account
-            // let mut collectible_calldata = ArrayTrait::new();
-            // name.serialize(ref collectible_calldata);
-            // symbol.serialize(ref collectible_calldata);
-            // decimals.serialize(ref collectible_calldata);
-            // let (collectible_contract, _) = deploy_syscall(
-            //         self.infini_rewards_collectible_hash.read(), 
-            //         0, 
-            //         collectible_calldata.span(), 
-            //         false
-            //     )
-            //         .expect('failed to deploy collectible');
-            // // Initialize merchant account with collectible contract
-            // merchant_account_instance.add_collectible_contract(collectible_contract);
 
             self.emit(MerchantCreated { merchant, points_contract });
             (merchant, points_contract)
@@ -206,7 +190,7 @@ mod InfiniRewardsFactory {
             ref self: ContractState,
             name: ByteArray,
             symbol: ByteArray,
-            description: ByteArray,
+            metadata: ByteArray,
             decimals: u8
         ) -> ContractAddress {           
             let mut constructor_calldata = ArrayTrait::new();
@@ -214,7 +198,7 @@ mod InfiniRewardsFactory {
             merchant.serialize(ref constructor_calldata);
             name.serialize(ref constructor_calldata);
             symbol.serialize(ref constructor_calldata);
-            description.serialize(ref constructor_calldata);
+            metadata.serialize(ref constructor_calldata);
             decimals.serialize(ref constructor_calldata);
             let (new_contract, _) = deploy_syscall(
                     self.infini_rewards_points_hash.read(), 0, constructor_calldata.span(), false
@@ -230,13 +214,13 @@ mod InfiniRewardsFactory {
         fn create_collectible_contract(
             ref self: ContractState,
             name: ByteArray,
-            description: ByteArray,
+            metadata: ByteArray,
         ) -> ContractAddress {
             let mut constructor_calldata = ArrayTrait::new();
             let merchant = get_caller_address();
             merchant.serialize(ref constructor_calldata);
             name.serialize(ref constructor_calldata);
-            description.serialize(ref constructor_calldata);
+            metadata.serialize(ref constructor_calldata);
 
             let (new_contract, _) = deploy_syscall(
                 self.infini_rewards_collectible_hash.read(),
