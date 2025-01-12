@@ -3,7 +3,7 @@
 
 #[starknet::contract(account)]
 mod InfiniRewardsUserAccount {
-    use openzeppelin::account::AccountComponent;
+    use contracts::components::account::AccountComponent;
     use openzeppelin::introspection::src5::SRC5Component;
     use openzeppelin::upgrades::UpgradeableComponent;
     use openzeppelin::upgrades::interface::IUpgradeable;

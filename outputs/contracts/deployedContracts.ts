@@ -120,7 +120,7 @@ const deployedContracts = {
         {
           type: "impl",
           name: "ERC20MixinImpl",
-          interface_name: "openzeppelin_token::erc20::interface::ERC20ABI",
+          interface_name: "openzeppelin_token::erc20::interface::IERC20Mixin",
         },
         {
           type: "enum",
@@ -138,7 +138,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_token::erc20::interface::ERC20ABI",
+          name: "openzeppelin_token::erc20::interface::IERC20Mixin",
           items: [
             {
               type: "function",
@@ -1690,7 +1690,7 @@ const deployedContracts = {
     },
     InfiniRewardsFactory: {
       address:
-        "0x2ff4444b5dbcb93fc1a222167ab91445b5c8ba1573b8c6a68b0463318b214ec",
+        "0x1bb3cca03cf50fd64c701257db6b82c65d665e40359e7272c3793aeb853fca8",
       abi: [
         {
           type: "impl",
@@ -2289,7 +2289,7 @@ const deployedContracts = {
         },
       ],
       classHash:
-        "0xc4f5d11ee0eeec1c36ff3add191e37e88601ccf232e6033d0fefcb40ebc2d9",
+        "0x69c744749c1797a6513e21f3d194e0c681a2e47c5934b9173379acb9b5bee93",
     },
   },
   sepolia: {
@@ -2408,7 +2408,7 @@ const deployedContracts = {
         {
           type: "impl",
           name: "ERC20MixinImpl",
-          interface_name: "openzeppelin_token::erc20::interface::ERC20ABI",
+          interface_name: "openzeppelin_token::erc20::interface::IERC20Mixin",
         },
         {
           type: "enum",
@@ -2426,7 +2426,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_token::erc20::interface::ERC20ABI",
+          name: "openzeppelin_token::erc20::interface::IERC20Mixin",
           items: [
             {
               type: "function",
