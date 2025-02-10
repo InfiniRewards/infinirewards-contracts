@@ -230,8 +230,8 @@ mod InfiniRewardsCollectible {
         }
 
         #[external(v0)]
-        fn get_token_data(ref self: ContractState, token_id: u256) -> (ContractAddress, u256, u64, ByteArray) {
-            (self.points_contract.read(), self.token_prices.entry(token_id).read(), self.token_expiries.entry(token_id).read(), self.token_metadatas.entry(token_id).read())
+        fn get_token_data(ref self: ContractState, token_id: u256) -> (ContractAddress, u256, u64, ByteArray, u256) {
+            (self.points_contract.read(), self.token_prices.entry(token_id).read(), self.token_expiries.entry(token_id).read(), self.token_metadatas.entry(token_id).read(), self.token_supplies.entry(token_id).read())
         }
 
         #[external(v0)]
@@ -303,6 +303,13 @@ mod InfiniRewardsCollectible {
         fn set_points_contract(ref self: ContractState, points_contract: ContractAddress) {
             self.ownable.assert_only_owner();
             self.points_contract.write(points_contract);
+        }
+
+        #[external(v0)]
+        fn set_details(ref self: ContractState, name: ByteArray, metadata: ByteArray) {
+            self.ownable.assert_only_owner();
+            self.name.write(name);
+            self.metadata.write(metadata);
         }
     }
 

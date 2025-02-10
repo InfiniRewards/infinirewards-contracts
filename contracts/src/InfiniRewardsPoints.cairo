@@ -131,6 +131,7 @@ mod InfiniRewardsPoints {
             self.erc20.mint(recipient, amount);
         }
 
+        #[external(v0)]
         fn update_metadata(ref self: ContractState, metadata: ByteArray) {
             self.ownable.assert_only_owner();
             self.metadata.write(metadata);

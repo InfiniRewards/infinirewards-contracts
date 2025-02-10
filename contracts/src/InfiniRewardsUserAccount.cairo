@@ -19,8 +19,8 @@ mod InfiniRewardsUserAccount {
     impl SRC6CamelOnlyImpl = AccountComponent::SRC6CamelOnlyImpl<ContractState>;
     #[abi(embed_v0)]
     impl DeclarerImpl = AccountComponent::DeclarerImpl<ContractState>;
-    // #[abi(embed_v0)]
-    // impl DeployableImpl = AccountComponent::DeployableImpl<ContractState>;
+    #[abi(embed_v0)]
+    impl DeployableImpl = AccountComponent::DeployableImpl<ContractState>;
     #[abi(embed_v0)]
     impl PublicKeyImpl = AccountComponent::PublicKeyImpl<ContractState>;
     #[abi(embed_v0)]
@@ -39,7 +39,7 @@ mod InfiniRewardsUserAccount {
         src5: SRC5Component::Storage,
         #[substorage(v0)]
         upgradeable: UpgradeableComponent::Storage,
-        phone_number_hash: felt252,  // New field added
+        metadata: ByteArray,
     }
 
     #[event]
@@ -54,9 +54,8 @@ mod InfiniRewardsUserAccount {
     }
 
     #[constructor]
-    fn constructor(ref self: ContractState, public_key: felt252, phone_number_hash: felt252) {
+    fn constructor(ref self: ContractState, public_key: felt252) {
         self.account.initializer(public_key);
-        self.phone_number_hash.write(phone_number_hash);  // Initialize the new field
     }
 
     #[abi(embed_v0)]
@@ -71,8 +70,13 @@ mod InfiniRewardsUserAccount {
     #[abi(per_item)]
     impl ExternalImpl of ExternalTrait {
         #[external(v0)]
-        fn get_phone_number(self: @ContractState) -> felt252 {
-            self.phone_number_hash.read()
+        fn get_metadata(self: @ContractState) -> ByteArray {
+            self.metadata.read()
+        }
+
+        #[external(v0)]
+        fn set_metadata(ref self: ContractState, metadata: ByteArray) {
+            self.metadata.write(metadata);
         }
     }
 }

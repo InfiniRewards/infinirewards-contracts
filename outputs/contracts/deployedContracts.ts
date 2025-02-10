@@ -108,6 +108,18 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "update_metadata",
+          inputs: [
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
           name: "get_details",
           inputs: [],
           outputs: [
@@ -885,7 +897,7 @@ const deployedContracts = {
           ],
           outputs: [
             {
-              type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray)",
+              type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
             },
           ],
           state_mutability: "external",
@@ -978,6 +990,22 @@ const deployedContracts = {
             {
               name: "points_contract",
               type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "set_details",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
             },
           ],
           outputs: [],
@@ -1690,7 +1718,7 @@ const deployedContracts = {
     },
     InfiniRewardsFactory: {
       address:
-        "0x1bb3cca03cf50fd64c701257db6b82c65d665e40359e7272c3793aeb853fca8",
+        "0x489ac57ccbfe32b79f3ac736069ac17aa25f466d90ad5a5dbed2d8bb3cc5031",
       abi: [
         {
           type: "impl",
@@ -1730,26 +1758,6 @@ const deployedContracts = {
           state_mutability: "external",
         },
         {
-          type: "function",
-          name: "create_user",
-          inputs: [
-            {
-              name: "public_key",
-              type: "core::felt252",
-            },
-            {
-              name: "phone_number_hash",
-              type: "core::felt252",
-            },
-          ],
-          outputs: [
-            {
-              type: "core::starknet::contract_address::ContractAddress",
-            },
-          ],
-          state_mutability: "external",
-        },
-        {
           type: "struct",
           name: "core::byte_array::ByteArray",
           members: [
@@ -1769,6 +1777,26 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "create_user",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
           name: "create_merchant_contract",
           inputs: [
             {
@@ -1776,8 +1804,8 @@ const deployedContracts = {
               type: "core::felt252",
             },
             {
-              name: "phone_number_hash",
-              type: "core::felt252",
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
             },
             {
               name: "name",
@@ -2188,8 +2216,8 @@ const deployedContracts = {
               kind: "data",
             },
             {
-              name: "phone_number_hash",
-              type: "core::felt252",
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
               kind: "data",
             },
           ],
@@ -2393,6 +2421,18 @@ const deployedContracts = {
               type: "core::integer::u32",
             },
           ],
+        },
+        {
+          type: "function",
+          name: "update_metadata",
+          inputs: [
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
         },
         {
           type: "function",
@@ -3173,7 +3213,7 @@ const deployedContracts = {
           ],
           outputs: [
             {
-              type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray)",
+              type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
             },
           ],
           state_mutability: "external",
@@ -3266,6 +3306,22 @@ const deployedContracts = {
             {
               name: "points_contract",
               type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "set_details",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
             },
           ],
           outputs: [],
@@ -4018,26 +4074,6 @@ const deployedContracts = {
           state_mutability: "external",
         },
         {
-          type: "function",
-          name: "create_user",
-          inputs: [
-            {
-              name: "public_key",
-              type: "core::felt252",
-            },
-            {
-              name: "phone_number_hash",
-              type: "core::felt252",
-            },
-          ],
-          outputs: [
-            {
-              type: "core::starknet::contract_address::ContractAddress",
-            },
-          ],
-          state_mutability: "external",
-        },
-        {
           type: "struct",
           name: "core::byte_array::ByteArray",
           members: [
@@ -4057,6 +4093,26 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "create_user",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
           name: "create_merchant_contract",
           inputs: [
             {
@@ -4064,8 +4120,8 @@ const deployedContracts = {
               type: "core::felt252",
             },
             {
-              name: "phone_number_hash",
-              type: "core::felt252",
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
             },
             {
               name: "name",
@@ -4476,8 +4532,8 @@ const deployedContracts = {
               kind: "data",
             },
             {
-              name: "phone_number_hash",
-              type: "core::felt252",
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
               kind: "data",
             },
           ],

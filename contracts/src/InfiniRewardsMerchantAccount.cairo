@@ -22,8 +22,8 @@ mod InfiniRewardsMerchantAccount {
     impl SRC6CamelOnlyImpl = AccountComponent::SRC6CamelOnlyImpl<ContractState>;
     #[abi(embed_v0)]
     impl DeclarerImpl = AccountComponent::DeclarerImpl<ContractState>;
-    // #[abi(embed_v0)]
-    // impl DeployableImpl = AccountComponent::DeployableImpl<ContractState>;
+    #[abi(embed_v0)]
+    impl DeployableImpl = AccountComponent::DeployableImpl<ContractState>;
     #[abi(embed_v0)]
     impl PublicKeyImpl = AccountComponent::PublicKeyImpl<ContractState>;
     #[abi(embed_v0)]
@@ -42,7 +42,7 @@ mod InfiniRewardsMerchantAccount {
         src5: SRC5Component::Storage,
         #[substorage(v0)]
         upgradeable: UpgradeableComponent::Storage,
-        phone_number_hash: felt252,
+        metadata: ByteArray,
         points_contracts: Vec<ContractAddress>,
         collectible_contracts: Vec<ContractAddress>,
     }
@@ -59,9 +59,8 @@ mod InfiniRewardsMerchantAccount {
     }
 
     #[constructor]
-    fn constructor(ref self: ContractState, public_key: felt252, phone_number_hash: felt252) {
+    fn constructor(ref self: ContractState, public_key: felt252) {
         self.account.initializer(public_key);
-        self.phone_number_hash.write(phone_number_hash);
     }
 
     #[abi(embed_v0)]
@@ -110,6 +109,16 @@ mod InfiniRewardsMerchantAccount {
                         addresses.append(self.collectible_contracts.at(i).read());
                     };
             addresses
+        }
+
+        #[external(v0)]
+        fn set_metadata(ref self: ContractState, metadata: ByteArray) {
+            self.metadata.write(metadata);
+        }
+
+        #[external(v0)]
+        fn get_metadata(self: @ContractState) -> ByteArray {
+            self.metadata.read()
         }
     }
 }

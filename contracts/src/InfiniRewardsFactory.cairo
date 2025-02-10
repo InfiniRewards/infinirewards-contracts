@@ -60,7 +60,7 @@ mod InfiniRewardsFactory {
     #[derive(Drop, starknet::Event)]
     struct UserCreated {
         user: ContractAddress,
-        phone_number_hash: felt252,
+        metadata: ByteArray,
     }
 
     #[derive(Drop, starknet::Event)]
@@ -124,20 +124,20 @@ mod InfiniRewardsFactory {
         fn create_user(
             ref self: ContractState,
             public_key: felt252,
-            phone_number_hash: felt252
+            metadata: ByteArray
         ) -> ContractAddress {
             // assert(self.user_accounts.read(phone_number_hash).is_zero(), 'User already exists');
             
             let mut constructor_calldata = ArrayTrait::new();
             public_key.serialize(ref constructor_calldata);
-            phone_number_hash.serialize(ref constructor_calldata);
+            metadata.serialize(ref constructor_calldata);
             let (new_account, _) = deploy_syscall(
                     self.infini_rewards_user_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
                     .expect('failed to deploy account');
             // self.user_accounts.write(phone_number_hash, new_account);
             
-            self.emit(UserCreated { user: new_account, phone_number_hash });
+            self.emit(UserCreated { user: new_account, metadata });
             new_account
         }
 
@@ -145,7 +145,7 @@ mod InfiniRewardsFactory {
         fn create_merchant_contract(
             ref self: ContractState,
             public_key: felt252,
-            phone_number_hash: felt252,
+            metadata: ByteArray,
             name: ByteArray,
             symbol: ByteArray,
             decimals: u8
@@ -155,7 +155,7 @@ mod InfiniRewardsFactory {
             
             let mut constructor_calldata = ArrayTrait::new();
             public_key.serialize(ref constructor_calldata);
-            phone_number_hash.serialize(ref constructor_calldata);
+            metadata.serialize(ref constructor_calldata);
             let (merchant, _) = deploy_syscall(
                     self.infini_rewards_merchant_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
