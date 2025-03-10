@@ -502,7 +502,7 @@ pub mod AccountComponent {
             assert(session.expires_at >= get_block_timestamp(), 'Session expired');
 
             self.sessions.entry(public_key).data.write(session);
-            self.sessions_vec.append().write(public_key);
+            self.sessions_vec.push(public_key);
             self.valid_session_cache.entry((guid_or_address, public_key)).write(true);
             self.emit(SessionRegistered { public_key, guid_or_address });
         }
@@ -640,7 +640,7 @@ pub mod AccountComponent {
                 };
             };
             permission.selector_count.write(new_count);
-            session_entry.permissions_vec.append().write(contract);
+            session_entry.permissions_vec.push(contract);
             self.emit(PermissionUpdated { public_key, contract });
         }
 
@@ -725,7 +725,7 @@ pub mod AccountComponent {
             // Update policy state
             policy.current_amount = new_amount;
             session_entry.policies_map.entry(contract).write(policy);
-            session_entry.policies_vec.append().write(contract);
+            session_entry.policies_vec.push(contract);
             true
         }
 

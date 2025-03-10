@@ -6,7 +6,7 @@ mod InfiniRewardsMerchantAccount {
     use openzeppelin::introspection::src5::SRC5Component;
     use openzeppelin::upgrades::UpgradeableComponent;
     use openzeppelin::upgrades::interface::IUpgradeable;
-    use core::starknet::{ClassHash, ContractAddress};
+    use starknet::{ClassHash, ContractAddress};
     use starknet::storage::{
         StoragePointerReadAccess, StoragePointerWriteAccess, Vec, VecTrait, MutableVecTrait
     };
@@ -74,13 +74,17 @@ mod InfiniRewardsMerchantAccount {
     #[abi(embed_v0)]
     impl IInfiniRewardsMerchantAccountImpl of IInfiniRewardsMerchantAccount<ContractState> {
         fn add_points_contract(ref self: ContractState, points_contract: ContractAddress) {
-            self.points_contracts.append().write(points_contract);
+            self.points_contracts.push(points_contract);
         }
 
         fn add_collectible_contract(
             ref self: ContractState, collectible_contract: ContractAddress
         ) {
-            self.collectible_contracts.append().write(collectible_contract);
+            self.collectible_contracts.push(collectible_contract);
+        }
+
+        fn set_metadata(ref self: ContractState, metadata: ByteArray) {
+            self.metadata.write(metadata);
         }
     }
 
@@ -109,11 +113,6 @@ mod InfiniRewardsMerchantAccount {
                         addresses.append(self.collectible_contracts.at(i).read());
                     };
             addresses
-        }
-
-        #[external(v0)]
-        fn set_metadata(ref self: ContractState, metadata: ByteArray) {
-            self.metadata.write(metadata);
         }
 
         #[external(v0)]

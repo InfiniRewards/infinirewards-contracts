@@ -10,7 +10,7 @@ mod InfiniRewardsCollectible {
     use openzeppelin::upgrades::UpgradeableComponent;
     use openzeppelin::upgrades::interface::IUpgradeable;
     use starknet::ClassHash;
-    use core::starknet::{ContractAddress, get_caller_address};
+    use starknet::{ContractAddress, get_caller_address};
     use starknet::storage::{
         StoragePointerReadAccess, StoragePointerWriteAccess, Map, StoragePathEntry, Vec, VecTrait, MutableVecTrait
     };
@@ -222,7 +222,7 @@ mod InfiniRewardsCollectible {
                 }
             };
             if !token_exists {
-                self.token_ids.append().write(token_id);
+                self.token_ids.push(token_id);
             }
             self.token_prices.entry(token_id).write(price);
             self.token_expiries.entry(token_id).write(expiry);

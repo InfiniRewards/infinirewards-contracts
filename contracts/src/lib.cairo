@@ -7,6 +7,7 @@ mod interfaces {
     pub mod IInfiniRewards;
     pub mod IInfiniRewardsPoints;
     pub mod IInfiniRewardsMerchantAccount;
+    pub mod IInfiniRewardsUserAccount;
     pub mod permission;
     pub mod policy;
     pub mod session_key;

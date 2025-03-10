@@ -7,6 +7,8 @@ mod InfiniRewardsUserAccount {
     use openzeppelin::introspection::src5::SRC5Component;
     use openzeppelin::upgrades::UpgradeableComponent;
     use openzeppelin::upgrades::interface::IUpgradeable;
+    use starknet::storage::{StoragePointerWriteAccess, StoragePointerReadAccess};
+    use contracts::interfaces::IInfiniRewardsUserAccount::IInfiniRewardsUserAccount;
     use starknet::ClassHash;
 
     component!(path: AccountComponent, storage: account, event: AccountEvent);
@@ -59,6 +61,13 @@ mod InfiniRewardsUserAccount {
     }
 
     #[abi(embed_v0)]
+    impl IInfiniRewardsUserAccountImpl of IInfiniRewardsUserAccount<ContractState> {
+        fn set_metadata(ref self: ContractState, metadata: ByteArray) {
+            self.metadata.write(metadata);
+        }
+    }
+
+    #[abi(embed_v0)]
     impl UpgradeableImpl of IUpgradeable<ContractState> {
         fn upgrade(ref self: ContractState, new_class_hash: ClassHash) {
             self.account.assert_only_self();
@@ -72,11 +81,6 @@ mod InfiniRewardsUserAccount {
         #[external(v0)]
         fn get_metadata(self: @ContractState) -> ByteArray {
             self.metadata.read()
-        }
-
-        #[external(v0)]
-        fn set_metadata(ref self: ContractState, metadata: ByteArray) {
-            self.metadata.write(metadata);
         }
     }
 }

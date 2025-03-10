@@ -14,4 +14,9 @@ pub trait IInfiniRewardsMerchantAccount<TContractState> {
     /// @notice Adds a collectible contract to the merchant account
     /// @param collectible_contract The address of the collectible contract to add
     fn add_collectible_contract(ref self: TContractState, collectible_contract: ContractAddress);
+
+    /// @notice Sets the metadata for the merchant account
+    /// @param metadata The metadata to set
+    fn set_metadata(ref self: TContractState, metadata: ByteArray);
+    
 }

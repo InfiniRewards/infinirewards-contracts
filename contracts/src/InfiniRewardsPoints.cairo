@@ -10,6 +10,7 @@ mod InfiniRewardsPoints {
     use openzeppelin::upgrades::interface::IUpgradeable;
     use starknet::ClassHash;
     use starknet::ContractAddress;
+    use starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
     use starknet::get_caller_address;
 
     component!(path: ERC20Component, storage: erc20, event: ERC20Event);

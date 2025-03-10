@@ -6,12 +6,13 @@ mod InfiniRewardsFactory {
     use openzeppelin::security::pausable::PausableComponent;
     use openzeppelin::upgrades::UpgradeableComponent;
     use openzeppelin::upgrades::interface::IUpgradeable;
-    use core::starknet::{ClassHash, ContractAddress, get_caller_address};
+    use starknet::{ClassHash, ContractAddress, get_caller_address};
     use starknet::storage::{
         StoragePointerReadAccess, StoragePointerWriteAccess
     };
     use starknet::syscalls::deploy_syscall;
     use contracts::interfaces::IInfiniRewardsMerchantAccount::{IInfiniRewardsMerchantAccountDispatcherTrait, IInfiniRewardsMerchantAccountDispatcher};
+    use contracts::interfaces::IInfiniRewardsUserAccount::{IInfiniRewardsUserAccountDispatcherTrait, IInfiniRewardsUserAccountDispatcher};
 
     component!(path: PausableComponent, storage: pausable, event: PausableEvent);
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
@@ -130,13 +131,13 @@ mod InfiniRewardsFactory {
             
             let mut constructor_calldata = ArrayTrait::new();
             public_key.serialize(ref constructor_calldata);
-            metadata.serialize(ref constructor_calldata);
             let (new_account, _) = deploy_syscall(
                     self.infini_rewards_user_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
                     .expect('failed to deploy account');
             // self.user_accounts.write(phone_number_hash, new_account);
-            
+            let user_account_instance = IInfiniRewardsUserAccountDispatcher { contract_address: new_account };
+            user_account_instance.set_metadata(metadata.clone());
             self.emit(UserCreated { user: new_account, metadata });
             new_account
         }
@@ -155,7 +156,6 @@ mod InfiniRewardsFactory {
             
             let mut constructor_calldata = ArrayTrait::new();
             public_key.serialize(ref constructor_calldata);
-            metadata.serialize(ref constructor_calldata);
             let (merchant, _) = deploy_syscall(
                     self.infini_rewards_merchant_account_hash.read(), public_key, constructor_calldata.span(), true
                 )
@@ -166,9 +166,9 @@ mod InfiniRewardsFactory {
             merchant.serialize(ref points_calldata);
             name.serialize(ref points_calldata);
             symbol.serialize(ref points_calldata);
-            let mut metadata = Default::default();
-            metadata.append_word(0xb900016b6465736372697074696f6e6e44656661756c7420506f696e7473, 30); // Default Points Metadata: {"description":"Default Points"}
-            metadata.serialize(ref points_calldata);
+            let mut points_metadata = Default::default();
+            points_metadata.append_word(0xb900016b6465736372697074696f6e6e44656661756c7420506f696e7473, 30); // Default Points Metadata: {"description":"Default Points"}
+            points_metadata.serialize(ref points_calldata);
             decimals.serialize(ref points_calldata);
             let (points_contract, _) = deploy_syscall(
                     self.infini_rewards_points_hash.read(), 
@@ -180,6 +180,7 @@ mod InfiniRewardsFactory {
             // Initialize merchant account with points contract
             let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
             merchant_account_instance.add_points_contract(points_contract);
+            merchant_account_instance.set_metadata(metadata.clone());
 
             self.emit(MerchantCreated { merchant, points_contract });
             (merchant, points_contract)
