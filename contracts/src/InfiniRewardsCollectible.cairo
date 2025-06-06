@@ -230,7 +230,7 @@ mod InfiniRewardsCollectible {
         }
 
         #[external(v0)]
-        fn get_token_data(ref self: ContractState, token_id: u256) -> (ContractAddress, u256, u64, ByteArray, u256) {
+        fn get_token_data(self: @ContractState, token_id: u256) -> (ContractAddress, u256, u64, ByteArray, u256) {
             (self.points_contract.read(), self.token_prices.entry(token_id).read(), self.token_expiries.entry(token_id).read(), self.token_metadatas.entry(token_id).read(), self.token_supplies.entry(token_id).read())
         }
 

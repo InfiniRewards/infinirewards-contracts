@@ -900,7 +900,7 @@ const deployedContracts = {
               type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
             },
           ],
-          state_mutability: "external",
+          state_mutability: "view",
         },
         {
           type: "function",
@@ -3216,7 +3216,7 @@ const deployedContracts = {
               type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
             },
           ],
-          state_mutability: "external",
+          state_mutability: "view",
         },
         {
           type: "function",
