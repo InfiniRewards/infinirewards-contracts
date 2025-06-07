@@ -8,6 +8,7 @@ InfiniRewards is a modular smart contract system that allows:
 - Merchants to create and manage their own loyalty points
 - Users to earn and spend points across different merchants
 - Creation and management of collectible NFTs (ERC-1155)
+- Issuance of non-transferable certificate tokens (SBT)
 - Secure account abstraction for both users and merchants
 
 ## Contract Architecture
@@ -16,7 +17,7 @@ The system consists of several core contracts:
 
 ### InfiniRewardsFactory
 - Central factory contract for deploying and managing the ecosystem
-- Creates user accounts, merchant accounts, points contracts, and collectible contracts
+- Creates user accounts, merchant accounts, points contracts, collectible contracts, and certificate contracts
 - Maintains registry of all deployed contracts
 
 ### InfiniRewardsPoints
@@ -30,6 +31,11 @@ The system consists of several core contracts:
 - Supports multiple collectible types per merchant
 - Configurable pricing in merchant's points
 - Metadata and supply management
+
+### InfiniRewardsCertificate
+- ERC-1155 compatible certificate token
+- Non-transferable (SBT-style)
+- Expiry and metadata management
 
 ### Account Contracts
 - Separate account implementations for users and merchants

@@ -37,6 +37,7 @@ mod InfiniRewardsFactory {
         upgradeable: UpgradeableComponent::Storage,
         infini_rewards_points_hash: ClassHash,
         infini_rewards_collectible_hash: ClassHash,
+        infini_rewards_certificate_hash: ClassHash,
         infini_rewards_user_account_hash: ClassHash,
         infini_rewards_merchant_account_hash: ClassHash,
         // user_accounts: Map::<felt252, ContractAddress>,
@@ -56,6 +57,7 @@ mod InfiniRewardsFactory {
         MerchantCreated: MerchantCreated,
         PointsCreated: PointsCreated,
         CollectibleCreated: CollectibleCreated,
+        CertificateCreated: CertificateCreated,
     }
 
     #[derive(Drop, starknet::Event)]
@@ -82,17 +84,25 @@ mod InfiniRewardsFactory {
         merchant: ContractAddress,
     }
 
+    #[derive(Drop, starknet::Event)]
+    struct CertificateCreated {
+        certificate_contract: ContractAddress,
+        merchant: ContractAddress,
+    }
+
     #[constructor]
     fn constructor(
         ref self: ContractState,
         infini_rewards_points_hash: ClassHash,
         infini_rewards_collectible_hash: ClassHash,
+        infini_rewards_certificate_hash: ClassHash,
         infini_rewards_user_account_hash: ClassHash,
         infini_rewards_merchant_account_hash: ClassHash,
         owner: ContractAddress
     ) {
         self.infini_rewards_points_hash.write(infini_rewards_points_hash);
         self.infini_rewards_collectible_hash.write(infini_rewards_collectible_hash);
+        self.infini_rewards_certificate_hash.write(infini_rewards_certificate_hash);
         self.infini_rewards_user_account_hash.write(infini_rewards_user_account_hash);
         self.infini_rewards_merchant_account_hash.write(infini_rewards_merchant_account_hash);
         self.ownable.initializer(owner);
@@ -237,6 +247,31 @@ mod InfiniRewardsFactory {
         }
 
         #[external(v0)]
+        fn create_certificate_contract(
+            ref self: ContractState,
+            name: ByteArray,
+            metadata: ByteArray,
+        ) -> ContractAddress {
+            let mut constructor_calldata = ArrayTrait::new();
+            let merchant = get_caller_address();
+            merchant.serialize(ref constructor_calldata);
+            name.serialize(ref constructor_calldata);
+            metadata.serialize(ref constructor_calldata);
+
+            let (new_contract, _) = deploy_syscall(
+                self.infini_rewards_certificate_hash.read(),
+                0,
+                constructor_calldata.span(),
+                false
+            ).expect('deploy failed');
+
+            let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
+            merchant_account_instance.add_collectible_contract(new_contract);
+            self.emit(CertificateCreated { certificate_contract: new_contract, merchant });
+            new_contract
+        }
+
+        #[external(v0)]
         fn get_user_class_hash(self: @ContractState) -> ClassHash {
             self.infini_rewards_user_account_hash.read()
         }
@@ -278,6 +313,17 @@ mod InfiniRewardsFactory {
         fn set_collectible_class_hash(ref self: ContractState, class_hash: ClassHash) {
             self.ownable.assert_only_owner();
             self.infini_rewards_collectible_hash.write(class_hash);
+        }
+
+        #[external(v0)]
+        fn get_certificate_class_hash(self: @ContractState) -> ClassHash {
+            self.infini_rewards_certificate_hash.read()
+        }
+
+        #[external(v0)]
+        fn set_certificate_class_hash(ref self: ContractState, class_hash: ClassHash) {
+            self.ownable.assert_only_owner();
+            self.infini_rewards_certificate_hash.write(class_hash);
         }
     }
 }
