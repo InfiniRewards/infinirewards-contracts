@@ -7,4 +7,6 @@ pub mod Errors {
     pub const INVALID_PRICE: felt252 = 'INVALID PRICE';
     pub const INVALID_AMOUNT: felt252 = 'INVALID AMOUNT';
     pub const NOT_FOR_SALE: felt252 = 'NOT FOR SALE';
+    pub const CERTIFICATE_NOT_EXIST: felt252 = 'CERTIFICATE NOT EXIST';
+    pub const NON_TRANSFERABLE: felt252 = 'NON TRANSFERABLE';
 }

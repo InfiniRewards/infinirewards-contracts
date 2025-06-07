@@ -3,6 +3,7 @@ mod InfiniRewardsMerchantAccount;
 mod InfiniRewardsFactory;
 mod InfiniRewardsPoints;
 mod InfiniRewardsCollectible;
+mod InfiniRewardsCertificate;
 mod interfaces {
     pub mod IInfiniRewards;
     pub mod IInfiniRewardsPoints;
