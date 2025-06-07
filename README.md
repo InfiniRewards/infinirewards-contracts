@@ -85,3 +85,10 @@ The deployed contract addresses can be found in `outputs/contracts/deployedContr
 
 
 
+
+## Template Contracts
+
+Example industry templates are provided in the `templates/` directory. These
+contracts offer simple starting points for common verticals such as cafés, gyms
+and e-commerce sites. Merchants can use them as-is or extend them to fit their
+needs.
