@@ -45,6 +45,7 @@ mod InfiniRewardsMerchantAccount {
         metadata: ByteArray,
         points_contracts: Vec<ContractAddress>,
         collectible_contracts: Vec<ContractAddress>,
+        certificate_contracts: Vec<ContractAddress>,
     }
 
     #[event]
@@ -83,6 +84,12 @@ mod InfiniRewardsMerchantAccount {
             self.collectible_contracts.push(collectible_contract);
         }
 
+        fn add_certificate_contract(
+            ref self: ContractState, certificate_contract: ContractAddress
+        ) {
+            self.certificate_contracts.push(certificate_contract);
+        }
+
         fn set_metadata(ref self: ContractState, metadata: ByteArray) {
             self.metadata.write(metadata);
         }
@@ -111,6 +118,18 @@ mod InfiniRewardsMerchantAccount {
                     .collectible_contracts
                     .len() {
                         addresses.append(self.collectible_contracts.at(i).read());
+                    };
+            addresses
+        }
+
+        #[external(v0)]
+        fn get_certificate_contracts(self: @ContractState) -> Array::<ContractAddress> {
+            let mut addresses = array![];
+            for i in 0
+                ..self
+                    .certificate_contracts
+                    .len() {
+                        addresses.append(self.certificate_contracts.at(i).read());
                     };
             addresses
         }
