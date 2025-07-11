@@ -88,14 +88,34 @@ export async function getBalance(
   provider: Provider,
   tokenAddress: string
 ): Promise<bigint> {
-  try {
-    const contract = new Contract(erc20ABI, tokenAddress, provider);
-    const { balance } = await contract.balanceOf(account);
-    return uint256.uint256ToBN(balance);
-  } catch (error) {
-    console.error("Error fetching balance:", error);
-    return 0n;
+  // If balance checks are disabled due to networking issues, return a default balance
+  if (process.env.SKIP_BALANCE_CHECK === "true") {
+    console.log(yellow("Skipping balance check (SKIP_BALANCE_CHECK=true), assuming sufficient balance"));
+    return 1000000000000000000n; // Return 1 ETH worth as default
   }
+
+  // Retry logic for network connectivity issues
+  let retries = 3;
+  let delay = 1000;
+  
+  while (retries > 0) {
+    try {
+      const contract = new Contract(erc20ABI, tokenAddress, provider);
+      const { balance } = await contract.balanceOf(account);
+      return uint256.uint256ToBN(balance);
+    } catch (error) {
+      if ((error.toString().includes("fetch failed") || error.toString().includes("timeout") || error.toString().includes("ECONNRESET")) && retries > 1) {
+        console.log(yellow(`Network error fetching balance, retrying in ${delay}ms... (${retries - 1} attempts left)`));
+        await new Promise(resolve => setTimeout(resolve, delay));
+        delay *= 2;
+        retries--;
+      } else {
+        console.error("Error fetching balance:", error);
+        return 0n;
+      }
+    }
+  }
+  return 0n;
 }
 
 function getTxVersionFromFeeToken(feeToken: string, isSierra?: boolean) {

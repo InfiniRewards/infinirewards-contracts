@@ -65,7 +65,19 @@ const deployScript = async (): Promise<void> => {
   const merchantAccountClassHash = await declareContract({
     contract: "InfiniRewardsMerchantAccount",
   });
-  console.log("InfiniRewardsMerchantAccount class hash:", merchantAccountClassHash);
+  console.log(
+    "InfiniRewardsMerchantAccount class hash:",
+    merchantAccountClassHash
+  );
+
+  // Declare InfiniRewardsCertificate contract
+  const certificateClassHash = await declareContract({
+    contract: "InfiniRewardsCertificate",
+  });
+  console.log(
+    "InfiniRewardsCertificate class hash:",
+    certificateClassHash
+  );
 
   // Deploy InfiniRewardsFactory contract
   await deployContract({
@@ -75,6 +87,7 @@ const deployScript = async (): Promise<void> => {
       infini_rewards_collectible_hash: collectibleClassHash.classHash,
       infini_rewards_user_account_hash: userAccountClassHash.classHash,
       infini_rewards_merchant_account_hash: merchantAccountClassHash.classHash,
+      infini_rewards_certificate_hash: certificateClassHash.classHash,
       owner: deployer.address,
     },
   });

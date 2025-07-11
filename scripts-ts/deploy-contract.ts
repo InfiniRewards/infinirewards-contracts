@@ -343,6 +343,12 @@ const declareContract = async (
     options
   );
 
+  deployments[contract] = {
+    classHash: classHash,
+    address: "",
+    contract: contract,
+  };
+
   return {
     classHash: classHash,
   };

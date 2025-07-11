@@ -266,7 +266,7 @@ mod InfiniRewardsFactory {
             ).expect('deploy failed');
 
             let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
-            merchant_account_instance.add_collectible_contract(new_contract);
+            merchant_account_instance.add_certificate_contract(new_contract);
             self.emit(CertificateCreated { certificate_contract: new_contract, merchant });
             new_contract
         }

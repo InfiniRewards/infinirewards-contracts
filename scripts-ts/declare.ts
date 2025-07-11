@@ -11,7 +11,7 @@ import {
    * 
    * @returns {Promise<void>}
    */
-  const declareScript = async (): Promise<void> => {
+  export const declareScript = async (): Promise<void> => {
     // Declare InfiniRewardsPoints contract
     const pointsClassHash = await declareContract({
       contract: "InfiniRewardsPoints",
@@ -36,12 +36,18 @@ import {
     });
     console.log("InfiniRewardsMerchantAccount class hash:", merchantAccountClassHash);
   
+    // Declare InfiniRewardsCertificate contract
+    const certificateClassHash = await declareContract({
+      contract: "InfiniRewardsCertificate",
+    });
+    console.log("InfiniRewardsCertificate class hash:", certificateClassHash);
+
     // Declare InfiniRewardsFactory contract
     const factoryClassHash = await declareContract({
       contract: "InfiniRewardsFactory",
     });
     console.log("InfiniRewardsFactory class hash:", factoryClassHash);
+
+    await exportDeployments();
+    console.log(green("Declared contracts have been exported successfully."));
   };
-  
-  declareScript()
-    .catch(console.error);

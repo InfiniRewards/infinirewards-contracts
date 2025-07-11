@@ -1877,6 +1877,26 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "create_certificate_contract",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
           name: "get_user_class_hash",
           inputs: [],
           outputs: [
@@ -1958,6 +1978,29 @@ const deployedContracts = {
         {
           type: "function",
           name: "set_collectible_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_certificate_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_certificate_class_hash",
           inputs: [
             {
               name: "class_hash",
@@ -2073,6 +2116,10 @@ const deployedContracts = {
             },
             {
               name: "infini_rewards_collectible_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "infini_rewards_certificate_hash",
               type: "core::starknet::class_hash::ClassHash",
             },
             {
@@ -2275,6 +2322,23 @@ const deployedContracts = {
         },
         {
           type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CertificateCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "certificate_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
           name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::Event",
           kind: "enum",
           variants: [
@@ -2311,6 +2375,11 @@ const deployedContracts = {
             {
               name: "CollectibleCreated",
               type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
+              kind: "nested",
+            },
+            {
+              name: "CertificateCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CertificateCreated",
               kind: "nested",
             },
           ],
@@ -4034,7 +4103,7 @@ const deployedContracts = {
     },
     InfiniRewardsFactory: {
       address:
-        "0x6c0b75d53c757cc1979d3aaa9482ac449ae0dfd1e5a9807b24478cf4da2d5f8",
+        "0x1303cabd5ff9d1e26d9ce8c78e013f3f6662edfca9997233457ac0bbc415b3f",
       abi: [
         {
           type: "impl",
@@ -4193,6 +4262,26 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "create_certificate_contract",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
           name: "get_user_class_hash",
           inputs: [],
           outputs: [
@@ -4274,6 +4363,29 @@ const deployedContracts = {
         {
           type: "function",
           name: "set_collectible_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_certificate_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_certificate_class_hash",
           inputs: [
             {
               name: "class_hash",
@@ -4389,6 +4501,10 @@ const deployedContracts = {
             },
             {
               name: "infini_rewards_collectible_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "infini_rewards_certificate_hash",
               type: "core::starknet::class_hash::ClassHash",
             },
             {
@@ -4591,6 +4707,23 @@ const deployedContracts = {
         },
         {
           type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CertificateCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "certificate_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
           name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::Event",
           kind: "enum",
           variants: [
@@ -4629,11 +4762,16 @@ const deployedContracts = {
               type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
               kind: "nested",
             },
+            {
+              name: "CertificateCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CertificateCreated",
+              kind: "nested",
+            },
           ],
         },
       ],
       classHash:
-        "0x3fd96ccc3f327483765dc1d32db4104a03a0eda7be7013fc17915dc5caf852c",
+        "0x4a4a56fb1989f9013044f2fd5c6261994c2eb95a77bebd6237bba2d9dc471c",
     },
   },
 } as const;
