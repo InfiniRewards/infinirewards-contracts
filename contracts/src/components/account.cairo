@@ -10,7 +10,7 @@ use contracts::interfaces::policy::{Policy};
 #[starknet::interface]
 pub trait AccountABI<TState> {
     // ISRC6
-    fn __execute__(self: @TState, calls: Array<Call>) -> Array<Span<felt252>>;
+    fn __execute__(self: @TState, calls: Array<Call>);
     fn __validate__(ref self: TState, calls: Array<Call>) -> felt252;
     fn is_valid_signature(self: @TState, hash: felt252, signature: Array<felt252>) -> felt252;
 
@@ -60,11 +60,11 @@ pub mod AccountComponent {
     use core::hash::{HashStateExTrait, HashStateTrait};
     use core::num::traits::Zero;
     use core::poseidon::PoseidonTrait;
-    use openzeppelin::account::interface;
-    use openzeppelin::account::utils::{execute_calls, is_tx_version_valid, is_valid_stark_signature};
-    use openzeppelin::introspection::src5::SRC5Component;
-    use openzeppelin::introspection::src5::SRC5Component::InternalTrait as SRC5InternalTrait;
-    use openzeppelin::introspection::src5::SRC5Component::SRC5Impl;
+    use openzeppelin_interfaces::account::accounts as interface;
+    use openzeppelin_account::utils::{execute_single_call, is_tx_version_valid, is_valid_stark_signature};
+    use openzeppelin_introspection::src5::SRC5Component;
+    use openzeppelin_introspection::src5::SRC5Component::InternalTrait as SRC5InternalTrait;
+    use openzeppelin_introspection::src5::SRC5Component::SRC5Impl;
     use starknet::account::Call;
     use starknet::{
         get_block_timestamp,
@@ -149,7 +149,7 @@ pub mod AccountComponent {
 
     #[starknet::interface]
     pub trait ISRC6<TState> {
-        fn __execute__(self: @TState, calls: Array<Call>) -> Array<Span<felt252>>;
+        fn __execute__(self: @TState, calls: Array<Call>);
         fn __validate__(ref self: TState, calls: Array<Call>) -> felt252;
         fn is_valid_signature(self: @TState, hash: felt252, signature: Array<felt252>) -> felt252;
     }
@@ -174,7 +174,7 @@ pub mod AccountComponent {
         /// greater than or equal to `QUERY_OFFSET` + `MIN_TRANSACTION_VERSION`.
         fn __execute__(
             self: @ComponentState<TContractState>, calls: Array<Call>,
-        ) -> Array<Span<felt252>> {
+        ) {
             // Avoid calls from other contracts
             // https://github.com/OpenZeppelin/cairo-contracts/issues/344
             let sender = starknet::get_caller_address();
@@ -196,7 +196,9 @@ pub mod AccountComponent {
                 assert(block_info.block_timestamp < session_data.expires_at, 'Session expired');
             }
 
-            execute_calls(calls.span())
+            for call in calls.span() {
+                execute_single_call(call);
+            }
         }
 
         /// Verifies the validity of the signature for the current transaction.
@@ -346,7 +348,7 @@ pub mod AccountComponent {
         // ISRC6
         fn __execute__(
             self: @ComponentState<TContractState>, calls: Array<Call>,
-        ) -> Array<Span<felt252>> {
+        ) {
             SRC6::__execute__(self, calls)
         }
 

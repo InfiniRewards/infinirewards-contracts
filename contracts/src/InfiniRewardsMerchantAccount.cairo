@@ -3,9 +3,9 @@
 #[starknet::contract(account)]
 mod InfiniRewardsMerchantAccount {
     use contracts::components::account::AccountComponent;
-    use openzeppelin::introspection::src5::SRC5Component;
-    use openzeppelin::upgrades::UpgradeableComponent;
-    use openzeppelin::upgrades::interface::IUpgradeable;
+    use openzeppelin_introspection::src5::SRC5Component;
+    use openzeppelin_upgrades::UpgradeableComponent;
+    use openzeppelin_interfaces::upgrades::IUpgradeable;
     use starknet::{ClassHash, ContractAddress};
     use starknet::storage::{
         StoragePointerReadAccess, StoragePointerWriteAccess, Vec, VecTrait, MutableVecTrait

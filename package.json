@@ -4,6 +4,7 @@
   "scripts": {
     "chain": "starknet-devnet --seed 0 --account-class cairo1",
     "deploy": "ts-node scripts-ts/helpers/deploy-wrapper.ts",
+    "deploy:certificate": "ts-node scripts-ts/deploy-certificate-simple.ts",
     "upgrade:contract": "ts-node scripts-ts/upgrade-contract.ts",
     "deploy:reset": "ts-node scripts-ts/helpers/deploy-wrapper.ts --reset",
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -12,11 +12,11 @@ const deployedContracts = {
         {
           type: "impl",
           name: "UpgradeableImpl",
-          interface_name: "openzeppelin_upgrades::interface::IUpgradeable",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
         },
         {
           type: "interface",
-          name: "openzeppelin_upgrades::interface::IUpgradeable",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
           items: [
             {
               type: "function",
@@ -132,7 +132,7 @@ const deployedContracts = {
         {
           type: "impl",
           name: "ERC20MixinImpl",
-          interface_name: "openzeppelin_token::erc20::interface::IERC20Mixin",
+          interface_name: "openzeppelin_interfaces::token::erc20::IERC20Mixin",
         },
         {
           type: "enum",
@@ -150,7 +150,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_token::erc20::interface::IERC20Mixin",
+          name: "openzeppelin_interfaces::token::erc20::IERC20Mixin",
           items: [
             {
               type: "function",
@@ -352,11 +352,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "PausableImpl",
-          interface_name: "openzeppelin_security::interface::IPausable",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
         },
         {
           type: "interface",
-          name: "openzeppelin_security::interface::IPausable",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
           items: [
             {
               type: "function",
@@ -374,11 +375,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "OwnableMixinImpl",
-          interface_name: "openzeppelin_access::ownable::interface::OwnableABI",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
         },
         {
           type: "interface",
-          name: "openzeppelin_access::ownable::interface::OwnableABI",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
           items: [
             {
               type: "function",
@@ -672,11 +674,11 @@ const deployedContracts = {
         {
           type: "impl",
           name: "UpgradeableImpl",
-          interface_name: "openzeppelin_upgrades::interface::IUpgradeable",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
         },
         {
           type: "interface",
-          name: "openzeppelin_upgrades::interface::IUpgradeable",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
           items: [
             {
               type: "function",
@@ -1014,7 +1016,7 @@ const deployedContracts = {
         {
           type: "impl",
           name: "ERC1155MixinImpl",
-          interface_name: "openzeppelin_token::erc1155::interface::ERC1155ABI",
+          interface_name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
         },
         {
           type: "struct",
@@ -1028,7 +1030,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_token::erc1155::interface::ERC1155ABI",
+          name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
           items: [
             {
               type: "function",
@@ -1331,11 +1333,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "PausableImpl",
-          interface_name: "openzeppelin_security::interface::IPausable",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
         },
         {
           type: "interface",
-          name: "openzeppelin_security::interface::IPausable",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
           items: [
             {
               type: "function",
@@ -1353,11 +1356,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "OwnableMixinImpl",
-          interface_name: "openzeppelin_access::ownable::interface::OwnableABI",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
         },
         {
           type: "interface",
-          name: "openzeppelin_access::ownable::interface::OwnableABI",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
           items: [
             {
               type: "function",
@@ -1723,11 +1727,11 @@ const deployedContracts = {
         {
           type: "impl",
           name: "UpgradeableImpl",
-          interface_name: "openzeppelin_upgrades::interface::IUpgradeable",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
         },
         {
           type: "interface",
-          name: "openzeppelin_upgrades::interface::IUpgradeable",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
           items: [
             {
               type: "function",
@@ -2013,7 +2017,8 @@ const deployedContracts = {
         {
           type: "impl",
           name: "PausableImpl",
-          interface_name: "openzeppelin_security::interface::IPausable",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
         },
         {
           type: "enum",
@@ -2031,7 +2036,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_security::interface::IPausable",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
           items: [
             {
               type: "function",
@@ -2049,11 +2054,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "OwnableMixinImpl",
-          interface_name: "openzeppelin_access::ownable::interface::OwnableABI",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
         },
         {
           type: "interface",
-          name: "openzeppelin_access::ownable::interface::OwnableABI",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
           items: [
             {
               type: "function",
@@ -2389,19 +2395,18 @@ const deployedContracts = {
         "0x69c744749c1797a6513e21f3d194e0c681a2e47c5934b9173379acb9b5bee93",
     },
   },
-  sepolia: {
+  mainnet: {
     InfiniRewardsPoints: {
-      address:
-        "0x6f54d47b192409725c171ae0cd47f8fbe5954296fdeddc52d7462e57ce615b2",
+      address: "",
       abi: [
         {
           type: "impl",
           name: "UpgradeableImpl",
-          interface_name: "openzeppelin_upgrades::interface::IUpgradeable",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
         },
         {
           type: "interface",
-          name: "openzeppelin_upgrades::interface::IUpgradeable",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
           items: [
             {
               type: "function",
@@ -2517,7 +2522,7 @@ const deployedContracts = {
         {
           type: "impl",
           name: "ERC20MixinImpl",
-          interface_name: "openzeppelin_token::erc20::interface::IERC20Mixin",
+          interface_name: "openzeppelin_interfaces::token::erc20::IERC20Mixin",
         },
         {
           type: "enum",
@@ -2535,7 +2540,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_token::erc20::interface::IERC20Mixin",
+          name: "openzeppelin_interfaces::token::erc20::IERC20Mixin",
           items: [
             {
               type: "function",
@@ -2737,11 +2742,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "PausableImpl",
-          interface_name: "openzeppelin_security::interface::IPausable",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
         },
         {
           type: "interface",
-          name: "openzeppelin_security::interface::IPausable",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
           items: [
             {
               type: "function",
@@ -2759,11 +2765,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "OwnableMixinImpl",
-          interface_name: "openzeppelin_access::ownable::interface::OwnableABI",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
         },
         {
           type: "interface",
-          name: "openzeppelin_access::ownable::interface::OwnableABI",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
           items: [
             {
               type: "function",
@@ -3048,20 +3055,19 @@ const deployedContracts = {
         },
       ],
       classHash:
-        "0x10e4300c38ff404326b76635be0ff152436e7a236fbad8cf4a4022073296c76",
+        "0x6aba6a17d43c8daf09b91dea79d0842ddb96910f08c498d68150f12aa03f17d",
     },
     InfiniRewardsCollectible: {
-      address:
-        "0x75978c2f063cd92722cfea93abd237d62b06b2c6c6cd5d77eb7cffff892f8f6",
+      address: "",
       abi: [
         {
           type: "impl",
           name: "UpgradeableImpl",
-          interface_name: "openzeppelin_upgrades::interface::IUpgradeable",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
         },
         {
           type: "interface",
-          name: "openzeppelin_upgrades::interface::IUpgradeable",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
           items: [
             {
               type: "function",
@@ -3399,7 +3405,7 @@ const deployedContracts = {
         {
           type: "impl",
           name: "ERC1155MixinImpl",
-          interface_name: "openzeppelin_token::erc1155::interface::ERC1155ABI",
+          interface_name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
         },
         {
           type: "struct",
@@ -3413,7 +3419,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_token::erc1155::interface::ERC1155ABI",
+          name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
           items: [
             {
               type: "function",
@@ -3716,11 +3722,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "PausableImpl",
-          interface_name: "openzeppelin_security::interface::IPausable",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
         },
         {
           type: "interface",
-          name: "openzeppelin_security::interface::IPausable",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
           items: [
             {
               type: "function",
@@ -3738,11 +3745,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "OwnableMixinImpl",
-          interface_name: "openzeppelin_access::ownable::interface::OwnableABI",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
         },
         {
           type: "interface",
-          name: "openzeppelin_access::ownable::interface::OwnableABI",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
           items: [
             {
               type: "function",
@@ -4099,20 +4107,2213 @@ const deployedContracts = {
         },
       ],
       classHash:
-        "0x1307a2b8f676942b04354f7eb402b648a4d7a0896f4b2c0693bd3f7e1546f55",
+        "0x6b4d06e374fd3454bad398943c13bdcf749b94ac65bdf5c0d74e775ef4f1758",
     },
-    InfiniRewardsFactory: {
-      address:
-        "0x1303cabd5ff9d1e26d9ce8c78e013f3f6662edfca9997233457ac0bbc415b3f",
+    InfiniRewardsUserAccount: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "IInfiniRewardsUserAccountImpl",
+          interface_name:
+            "contracts::interfaces::IInfiniRewardsUserAccount::IInfiniRewardsUserAccount",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::interfaces::IInfiniRewardsUserAccount::IInfiniRewardsUserAccount",
+          items: [
+            {
+              type: "function",
+              name: "set_metadata",
+              inputs: [
+                {
+                  name: "metadata",
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "get_metadata",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "impl",
+          name: "SRC6Impl",
+          interface_name:
+            "contracts::components::account::AccountComponent::ISRC6",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "struct",
+          name: "core::starknet::account::Call",
+          members: [
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "selector",
+              type: "core::felt252",
+            },
+            {
+              name: "calldata",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::components::account::AccountComponent::ISRC6",
+          items: [
+            {
+              type: "function",
+              name: "__execute__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "__validate__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_valid_signature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC6CamelOnlyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "isValidSignature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeclarerImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeclarer",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeclarer",
+          items: [
+            {
+              type: "function",
+              name: "__validate_declare__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeployableImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeployable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeployable",
+          items: [
+            {
+              type: "function",
+              name: "__validate_deploy__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "contract_address_salt",
+                  type: "core::felt252",
+                },
+                {
+                  name: "public_key",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKey",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKey",
+          items: [
+            {
+              type: "function",
+              name: "get_public_key",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_public_key",
+              inputs: [
+                {
+                  name: "new_public_key",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyCamelImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+          items: [
+            {
+              type: "function",
+              name: "getPublicKey",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setPublicKey",
+              inputs: [
+                {
+                  name: "newPublicKey",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC5Impl",
+          interface_name: "openzeppelin_interfaces::introspection::ISRC5",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::introspection::ISRC5",
+          items: [
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerAdded",
+          kind: "struct",
+          members: [
+            {
+              name: "new_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerRemoved",
+          kind: "struct",
+          members: [
+            {
+              name: "removed_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRegistered",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "guid_or_address",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRevoked",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PermissionUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PolicyUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnerAdded",
+              type: "contracts::components::account::AccountComponent::OwnerAdded",
+              kind: "nested",
+            },
+            {
+              name: "OwnerRemoved",
+              type: "contracts::components::account::AccountComponent::OwnerRemoved",
+              kind: "nested",
+            },
+            {
+              name: "SessionRegistered",
+              type: "contracts::components::account::AccountComponent::SessionRegistered",
+              kind: "nested",
+            },
+            {
+              name: "SessionRevoked",
+              type: "contracts::components::account::AccountComponent::SessionRevoked",
+              kind: "nested",
+            },
+            {
+              name: "PermissionUpdated",
+              type: "contracts::components::account::AccountComponent::PermissionUpdated",
+              kind: "nested",
+            },
+            {
+              name: "PolicyUpdated",
+              type: "contracts::components::account::AccountComponent::PolicyUpdated",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsUserAccount::InfiniRewardsUserAccount::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "AccountEvent",
+              type: "contracts::components::account::AccountComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x6909ca4a9d5c5cb26da67d0463088c3e3c86fc1ee8753d941aca8be50148ae7",
+    },
+    InfiniRewardsMerchantAccount: {
+      address: "",
       abi: [
         {
           type: "impl",
           name: "UpgradeableImpl",
-          interface_name: "openzeppelin_upgrades::interface::IUpgradeable",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
         },
         {
           type: "interface",
-          name: "openzeppelin_upgrades::interface::IUpgradeable",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "IInfiniRewardsMerchantAccountImpl",
+          interface_name:
+            "contracts::interfaces::IInfiniRewardsMerchantAccount::IInfiniRewardsMerchantAccount",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::interfaces::IInfiniRewardsMerchantAccount::IInfiniRewardsMerchantAccount",
+          items: [
+            {
+              type: "function",
+              name: "add_points_contract",
+              inputs: [
+                {
+                  name: "points_contract",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "add_collectible_contract",
+              inputs: [
+                {
+                  name: "collectible_contract",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "add_certificate_contract",
+              inputs: [
+                {
+                  name: "certificate_contract",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "set_metadata",
+              inputs: [
+                {
+                  name: "metadata",
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "get_points_contracts",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_collectible_contracts",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_certificate_contracts",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_metadata",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "impl",
+          name: "SRC6Impl",
+          interface_name:
+            "contracts::components::account::AccountComponent::ISRC6",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "struct",
+          name: "core::starknet::account::Call",
+          members: [
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "selector",
+              type: "core::felt252",
+            },
+            {
+              name: "calldata",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::components::account::AccountComponent::ISRC6",
+          items: [
+            {
+              type: "function",
+              name: "__execute__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "__validate__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_valid_signature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC6CamelOnlyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "isValidSignature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeclarerImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeclarer",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeclarer",
+          items: [
+            {
+              type: "function",
+              name: "__validate_declare__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeployableImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeployable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeployable",
+          items: [
+            {
+              type: "function",
+              name: "__validate_deploy__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "contract_address_salt",
+                  type: "core::felt252",
+                },
+                {
+                  name: "public_key",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKey",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKey",
+          items: [
+            {
+              type: "function",
+              name: "get_public_key",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_public_key",
+              inputs: [
+                {
+                  name: "new_public_key",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyCamelImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+          items: [
+            {
+              type: "function",
+              name: "getPublicKey",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setPublicKey",
+              inputs: [
+                {
+                  name: "newPublicKey",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC5Impl",
+          interface_name: "openzeppelin_interfaces::introspection::ISRC5",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::introspection::ISRC5",
+          items: [
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerAdded",
+          kind: "struct",
+          members: [
+            {
+              name: "new_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerRemoved",
+          kind: "struct",
+          members: [
+            {
+              name: "removed_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRegistered",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "guid_or_address",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRevoked",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PermissionUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PolicyUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnerAdded",
+              type: "contracts::components::account::AccountComponent::OwnerAdded",
+              kind: "nested",
+            },
+            {
+              name: "OwnerRemoved",
+              type: "contracts::components::account::AccountComponent::OwnerRemoved",
+              kind: "nested",
+            },
+            {
+              name: "SessionRegistered",
+              type: "contracts::components::account::AccountComponent::SessionRegistered",
+              kind: "nested",
+            },
+            {
+              name: "SessionRevoked",
+              type: "contracts::components::account::AccountComponent::SessionRevoked",
+              kind: "nested",
+            },
+            {
+              name: "PermissionUpdated",
+              type: "contracts::components::account::AccountComponent::PermissionUpdated",
+              kind: "nested",
+            },
+            {
+              name: "PolicyUpdated",
+              type: "contracts::components::account::AccountComponent::PolicyUpdated",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsMerchantAccount::InfiniRewardsMerchantAccount::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "AccountEvent",
+              type: "contracts::components::account::AccountComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0xfbf24c15ac85eff3c8afa7738e9669614d11b54d196f26f6c194ad711ad35",
+    },
+    InfiniRewardsCertificate: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "pause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "unpause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "burn",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::integer::u256>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::integer::u256>",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "batch_burn",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_ids",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "mint",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+            {
+              name: "data",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "batch_mint",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_ids",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "data",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "set_token_data",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "expiry",
+              type: "core::integer::u64",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_token_data",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [
+            {
+              type: "(core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_details",
+          inputs: [],
+          outputs: [
+            {
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>, core::array::Array::<core::integer::u256>)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "is_valid",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::bool",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_details",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "impl",
+          name: "ERC1155MixinImpl",
+          interface_name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
+          items: [
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of_batch",
+              inputs: [
+                {
+                  name: "accounts",
+                  type: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+                },
+                {
+                  name: "token_ids",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "safe_transfer_from",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "value",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "safe_batch_transfer_from",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_ids",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "values",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_approved_for_all",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_approval_for_all",
+              inputs: [
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "approved",
+                  type: "core::bool",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "uri",
+              inputs: [
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenId",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOfBatch",
+              inputs: [
+                {
+                  name: "accounts",
+                  type: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+                },
+                {
+                  name: "tokenIds",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "safeTransferFrom",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenId",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "value",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "safeBatchTransferFrom",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenIds",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "values",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "isApprovedForAll",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setApprovalForAll",
+              inputs: [
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "approved",
+                  type: "core::bool",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PausableImpl",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
+          items: [
+            {
+              type: "function",
+              name: "is_paused",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableMixinImpl",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transferOwnership",
+              inputs: [
+                {
+                  name: "newOwner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounceOwnership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferSingle",
+          kind: "struct",
+          members: [
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "id",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferBatch",
+          kind: "struct",
+          members: [
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "ids",
+              type: "core::array::Span::<core::integer::u256>",
+              kind: "data",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::ApprovalForAll",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "approved",
+              type: "core::bool",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::URI",
+          kind: "struct",
+          members: [
+            {
+              name: "value",
+              type: "core::byte_array::ByteArray",
+              kind: "data",
+            },
+            {
+              name: "id",
+              type: "core::integer::u256",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "TransferSingle",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferSingle",
+              kind: "nested",
+            },
+            {
+              name: "TransferBatch",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferBatch",
+              kind: "nested",
+            },
+            {
+              name: "ApprovalForAll",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::ApprovalForAll",
+              kind: "nested",
+            },
+            {
+              name: "URI",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::URI",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Paused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Paused",
+              type: "openzeppelin_security::pausable::PausableComponent::Paused",
+              kind: "nested",
+            },
+            {
+              name: "Unpaused",
+              type: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsCertificate::InfiniRewardsCertificate::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC1155Event",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "PausableEvent",
+              type: "openzeppelin_security::pausable::PausableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x7bcebcbefd8612ceeaaff95fd0b044d0e481688e5ddf908f93a842e5fc1f8a9",
+    },
+    InfiniRewardsFactory: {
+      address:
+        "0xb3a2825360c22db8d143e667a2cb43fb30eb50ac0cb88c27c0752e69a7b031",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
           items: [
             {
               type: "function",
@@ -4398,7 +6599,8 @@ const deployedContracts = {
         {
           type: "impl",
           name: "PausableImpl",
-          interface_name: "openzeppelin_security::interface::IPausable",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
         },
         {
           type: "enum",
@@ -4416,7 +6618,7 @@ const deployedContracts = {
         },
         {
           type: "interface",
-          name: "openzeppelin_security::interface::IPausable",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
           items: [
             {
               type: "function",
@@ -4434,11 +6636,12 @@ const deployedContracts = {
         {
           type: "impl",
           name: "OwnableMixinImpl",
-          interface_name: "openzeppelin_access::ownable::interface::OwnableABI",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
         },
         {
           type: "interface",
-          name: "openzeppelin_access::ownable::interface::OwnableABI",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
           items: [
             {
               type: "function",
@@ -4771,7 +6974,4588 @@ const deployedContracts = {
         },
       ],
       classHash:
-        "0x4a4a56fb1989f9013044f2fd5c6261994c2eb95a77bebd6237bba2d9dc471c",
+        "0x7a047c1087f9f5bb336ff1697e8decc970615cd98cc4554ce5f3975145bd03d",
+    },
+  },
+  sepolia: {
+    InfiniRewardsPoints: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "pause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "unpause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "burn",
+          inputs: [
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "mint",
+          inputs: [
+            {
+              name: "recipient",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "amount",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "update_metadata",
+          inputs: [
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_details",
+          inputs: [],
+          outputs: [
+            {
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::byte_array::ByteArray, core::integer::u8, core::integer::u256)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "impl",
+          name: "ERC20MixinImpl",
+          interface_name: "openzeppelin_interfaces::token::erc20::IERC20Mixin",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::token::erc20::IERC20Mixin",
+          items: [
+            {
+              type: "function",
+              name: "total_supply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "allowance",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer",
+              inputs: [
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transfer_from",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "approve",
+              inputs: [
+                {
+                  name: "spender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "name",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "symbol",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "decimals",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u8",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "totalSupply",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transferFrom",
+              inputs: [
+                {
+                  name: "sender",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "recipient",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "amount",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PausableImpl",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
+          items: [
+            {
+              type: "function",
+              name: "is_paused",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableMixinImpl",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transferOwnership",
+              inputs: [
+                {
+                  name: "newOwner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounceOwnership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "decimals",
+              type: "core::integer::u8",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc20::erc20::ERC20Component::Transfer",
+          kind: "struct",
+          members: [
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc20::erc20::ERC20Component::Approval",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "spender",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc20::erc20::ERC20Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Transfer",
+              type: "openzeppelin_token::erc20::erc20::ERC20Component::Transfer",
+              kind: "nested",
+            },
+            {
+              name: "Approval",
+              type: "openzeppelin_token::erc20::erc20::ERC20Component::Approval",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Paused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Paused",
+              type: "openzeppelin_security::pausable::PausableComponent::Paused",
+              kind: "nested",
+            },
+            {
+              name: "Unpaused",
+              type: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsPoints::InfiniRewardsPoints::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC20Event",
+              type: "openzeppelin_token::erc20::erc20::ERC20Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "PausableEvent",
+              type: "openzeppelin_security::pausable::PausableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x6aba6a17d43c8daf09b91dea79d0842ddb96910f08c498d68150f12aa03f17d",
+    },
+    InfiniRewardsCollectible: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "pause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "unpause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "burn",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::integer::u256>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::integer::u256>",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "batch_burn",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_ids",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "mint",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+            {
+              name: "data",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "batch_mint",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_ids",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "data",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "set_base_uri",
+          inputs: [
+            {
+              name: "base_uri",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "set_token_data",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "points_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "price",
+              type: "core::integer::u256",
+            },
+            {
+              name: "expiry",
+              type: "core::integer::u64",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_token_data",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [
+            {
+              type: "(core::starknet::contract_address::ContractAddress, core::integer::u256, core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "redeem",
+          inputs: [
+            {
+              name: "user",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "amount",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "purchase",
+          inputs: [
+            {
+              name: "user",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "amount",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_details",
+          inputs: [],
+          outputs: [
+            {
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::starknet::contract_address::ContractAddress, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>, core::array::Array::<core::integer::u256>)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "is_valid",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::bool",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_points_contract",
+          inputs: [
+            {
+              name: "points_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "set_details",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "impl",
+          name: "ERC1155MixinImpl",
+          interface_name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
+          items: [
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of_batch",
+              inputs: [
+                {
+                  name: "accounts",
+                  type: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+                },
+                {
+                  name: "token_ids",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "safe_transfer_from",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "value",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "safe_batch_transfer_from",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_ids",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "values",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_approved_for_all",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_approval_for_all",
+              inputs: [
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "approved",
+                  type: "core::bool",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "uri",
+              inputs: [
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenId",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOfBatch",
+              inputs: [
+                {
+                  name: "accounts",
+                  type: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+                },
+                {
+                  name: "tokenIds",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "safeTransferFrom",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenId",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "value",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "safeBatchTransferFrom",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenIds",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "values",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "isApprovedForAll",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setApprovalForAll",
+              inputs: [
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "approved",
+                  type: "core::bool",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PausableImpl",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
+          items: [
+            {
+              type: "function",
+              name: "is_paused",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableMixinImpl",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transferOwnership",
+              inputs: [
+                {
+                  name: "newOwner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounceOwnership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferSingle",
+          kind: "struct",
+          members: [
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "id",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferBatch",
+          kind: "struct",
+          members: [
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "ids",
+              type: "core::array::Span::<core::integer::u256>",
+              kind: "data",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::ApprovalForAll",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "approved",
+              type: "core::bool",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::URI",
+          kind: "struct",
+          members: [
+            {
+              name: "value",
+              type: "core::byte_array::ByteArray",
+              kind: "data",
+            },
+            {
+              name: "id",
+              type: "core::integer::u256",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "TransferSingle",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferSingle",
+              kind: "nested",
+            },
+            {
+              name: "TransferBatch",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferBatch",
+              kind: "nested",
+            },
+            {
+              name: "ApprovalForAll",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::ApprovalForAll",
+              kind: "nested",
+            },
+            {
+              name: "URI",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::URI",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Paused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Paused",
+              type: "openzeppelin_security::pausable::PausableComponent::Paused",
+              kind: "nested",
+            },
+            {
+              name: "Unpaused",
+              type: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsCollectible::InfiniRewardsCollectible::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC1155Event",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "PausableEvent",
+              type: "openzeppelin_security::pausable::PausableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x6b4d06e374fd3454bad398943c13bdcf749b94ac65bdf5c0d74e775ef4f1758",
+    },
+    InfiniRewardsFactory: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "pause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "unpause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "create_user",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "create_merchant_contract",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "decimals",
+              type: "core::integer::u8",
+            },
+          ],
+          outputs: [
+            {
+              type: "(core::starknet::contract_address::ContractAddress, core::starknet::contract_address::ContractAddress)",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "create_points_contract",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "symbol",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "decimals",
+              type: "core::integer::u8",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "create_collectible_contract",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "create_certificate_contract",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_user_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_user_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_merchant_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_merchant_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_points_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_points_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_collectible_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_collectible_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_certificate_class_hash",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_certificate_class_hash",
+          inputs: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "impl",
+          name: "PausableImpl",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
+          items: [
+            {
+              type: "function",
+              name: "is_paused",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableMixinImpl",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transferOwnership",
+              inputs: [
+                {
+                  name: "newOwner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounceOwnership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "infini_rewards_points_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "infini_rewards_collectible_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "infini_rewards_certificate_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "infini_rewards_user_account_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "infini_rewards_merchant_account_hash",
+              type: "core::starknet::class_hash::ClassHash",
+            },
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Paused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Paused",
+              type: "openzeppelin_security::pausable::PausableComponent::Paused",
+              kind: "nested",
+            },
+            {
+              name: "Unpaused",
+              type: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::UserCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "user",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::MerchantCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "points_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::PointsCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "points_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "collectible_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CertificateCreated",
+          kind: "struct",
+          members: [
+            {
+              name: "certificate_contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+            {
+              name: "merchant",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "PausableEvent",
+              type: "openzeppelin_security::pausable::PausableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "UserCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::UserCreated",
+              kind: "nested",
+            },
+            {
+              name: "MerchantCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::MerchantCreated",
+              kind: "nested",
+            },
+            {
+              name: "PointsCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::PointsCreated",
+              kind: "nested",
+            },
+            {
+              name: "CollectibleCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CollectibleCreated",
+              kind: "nested",
+            },
+            {
+              name: "CertificateCreated",
+              type: "contracts::InfiniRewardsFactory::InfiniRewardsFactory::CertificateCreated",
+              kind: "nested",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x7a047c1087f9f5bb336ff1697e8decc970615cd98cc4554ce5f3975145bd03d",
+    },
+    InfiniRewardsUserAccount: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "IInfiniRewardsUserAccountImpl",
+          interface_name:
+            "contracts::interfaces::IInfiniRewardsUserAccount::IInfiniRewardsUserAccount",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::interfaces::IInfiniRewardsUserAccount::IInfiniRewardsUserAccount",
+          items: [
+            {
+              type: "function",
+              name: "set_metadata",
+              inputs: [
+                {
+                  name: "metadata",
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "get_metadata",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "impl",
+          name: "SRC6Impl",
+          interface_name:
+            "contracts::components::account::AccountComponent::ISRC6",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "struct",
+          name: "core::starknet::account::Call",
+          members: [
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "selector",
+              type: "core::felt252",
+            },
+            {
+              name: "calldata",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::components::account::AccountComponent::ISRC6",
+          items: [
+            {
+              type: "function",
+              name: "__execute__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "__validate__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_valid_signature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC6CamelOnlyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "isValidSignature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeclarerImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeclarer",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeclarer",
+          items: [
+            {
+              type: "function",
+              name: "__validate_declare__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeployableImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeployable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeployable",
+          items: [
+            {
+              type: "function",
+              name: "__validate_deploy__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "contract_address_salt",
+                  type: "core::felt252",
+                },
+                {
+                  name: "public_key",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKey",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKey",
+          items: [
+            {
+              type: "function",
+              name: "get_public_key",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_public_key",
+              inputs: [
+                {
+                  name: "new_public_key",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyCamelImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+          items: [
+            {
+              type: "function",
+              name: "getPublicKey",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setPublicKey",
+              inputs: [
+                {
+                  name: "newPublicKey",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC5Impl",
+          interface_name: "openzeppelin_interfaces::introspection::ISRC5",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::introspection::ISRC5",
+          items: [
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerAdded",
+          kind: "struct",
+          members: [
+            {
+              name: "new_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerRemoved",
+          kind: "struct",
+          members: [
+            {
+              name: "removed_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRegistered",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "guid_or_address",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRevoked",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PermissionUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PolicyUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnerAdded",
+              type: "contracts::components::account::AccountComponent::OwnerAdded",
+              kind: "nested",
+            },
+            {
+              name: "OwnerRemoved",
+              type: "contracts::components::account::AccountComponent::OwnerRemoved",
+              kind: "nested",
+            },
+            {
+              name: "SessionRegistered",
+              type: "contracts::components::account::AccountComponent::SessionRegistered",
+              kind: "nested",
+            },
+            {
+              name: "SessionRevoked",
+              type: "contracts::components::account::AccountComponent::SessionRevoked",
+              kind: "nested",
+            },
+            {
+              name: "PermissionUpdated",
+              type: "contracts::components::account::AccountComponent::PermissionUpdated",
+              kind: "nested",
+            },
+            {
+              name: "PolicyUpdated",
+              type: "contracts::components::account::AccountComponent::PolicyUpdated",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsUserAccount::InfiniRewardsUserAccount::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "AccountEvent",
+              type: "contracts::components::account::AccountComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x6909ca4a9d5c5cb26da67d0463088c3e3c86fc1ee8753d941aca8be50148ae7",
+    },
+    InfiniRewardsMerchantAccount: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "IInfiniRewardsMerchantAccountImpl",
+          interface_name:
+            "contracts::interfaces::IInfiniRewardsMerchantAccount::IInfiniRewardsMerchantAccount",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::interfaces::IInfiniRewardsMerchantAccount::IInfiniRewardsMerchantAccount",
+          items: [
+            {
+              type: "function",
+              name: "add_points_contract",
+              inputs: [
+                {
+                  name: "points_contract",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "add_collectible_contract",
+              inputs: [
+                {
+                  name: "collectible_contract",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "add_certificate_contract",
+              inputs: [
+                {
+                  name: "certificate_contract",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "set_metadata",
+              inputs: [
+                {
+                  name: "metadata",
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "get_points_contracts",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_collectible_contracts",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_certificate_contracts",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_metadata",
+          inputs: [],
+          outputs: [
+            {
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "impl",
+          name: "SRC6Impl",
+          interface_name:
+            "contracts::components::account::AccountComponent::ISRC6",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "struct",
+          name: "core::starknet::account::Call",
+          members: [
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "selector",
+              type: "core::felt252",
+            },
+            {
+              name: "calldata",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "contracts::components::account::AccountComponent::ISRC6",
+          items: [
+            {
+              type: "function",
+              name: "__execute__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "__validate__",
+              inputs: [
+                {
+                  name: "calls",
+                  type: "core::array::Array::<core::starknet::account::Call>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_valid_signature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC6CamelOnlyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::ISRC6CamelOnly",
+          items: [
+            {
+              type: "function",
+              name: "isValidSignature",
+              inputs: [
+                {
+                  name: "hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Array::<core::felt252>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeclarerImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeclarer",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeclarer",
+          items: [
+            {
+              type: "function",
+              name: "__validate_declare__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "DeployableImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IDeployable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IDeployable",
+          items: [
+            {
+              type: "function",
+              name: "__validate_deploy__",
+              inputs: [
+                {
+                  name: "class_hash",
+                  type: "core::felt252",
+                },
+                {
+                  name: "contract_address_salt",
+                  type: "core::felt252",
+                },
+                {
+                  name: "public_key",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKey",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKey",
+          items: [
+            {
+              type: "function",
+              name: "get_public_key",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_public_key",
+              inputs: [
+                {
+                  name: "new_public_key",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PublicKeyCamelImpl",
+          interface_name:
+            "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::account::accounts::IPublicKeyCamel",
+          items: [
+            {
+              type: "function",
+              name: "getPublicKey",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::felt252",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setPublicKey",
+              inputs: [
+                {
+                  name: "newPublicKey",
+                  type: "core::felt252",
+                },
+                {
+                  name: "signature",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "SRC5Impl",
+          interface_name: "openzeppelin_interfaces::introspection::ISRC5",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::introspection::ISRC5",
+          items: [
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerAdded",
+          kind: "struct",
+          members: [
+            {
+              name: "new_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::OwnerRemoved",
+          kind: "struct",
+          members: [
+            {
+              name: "removed_owner_guid",
+              type: "core::felt252",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRegistered",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "guid_or_address",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::SessionRevoked",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PermissionUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::PolicyUpdated",
+          kind: "struct",
+          members: [
+            {
+              name: "public_key",
+              type: "core::felt252",
+              kind: "data",
+            },
+            {
+              name: "contract",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::components::account::AccountComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnerAdded",
+              type: "contracts::components::account::AccountComponent::OwnerAdded",
+              kind: "nested",
+            },
+            {
+              name: "OwnerRemoved",
+              type: "contracts::components::account::AccountComponent::OwnerRemoved",
+              kind: "nested",
+            },
+            {
+              name: "SessionRegistered",
+              type: "contracts::components::account::AccountComponent::SessionRegistered",
+              kind: "nested",
+            },
+            {
+              name: "SessionRevoked",
+              type: "contracts::components::account::AccountComponent::SessionRevoked",
+              kind: "nested",
+            },
+            {
+              name: "PermissionUpdated",
+              type: "contracts::components::account::AccountComponent::PermissionUpdated",
+              kind: "nested",
+            },
+            {
+              name: "PolicyUpdated",
+              type: "contracts::components::account::AccountComponent::PolicyUpdated",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsMerchantAccount::InfiniRewardsMerchantAccount::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "AccountEvent",
+              type: "contracts::components::account::AccountComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0xfbf24c15ac85eff3c8afa7738e9669614d11b54d196f26f6c194ad711ad35",
+    },
+    InfiniRewardsCertificate: {
+      address: "",
+      abi: [
+        {
+          type: "impl",
+          name: "UpgradeableImpl",
+          interface_name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::upgrades::IUpgradeable",
+          items: [
+            {
+              type: "function",
+              name: "upgrade",
+              inputs: [
+                {
+                  name: "new_class_hash",
+                  type: "core::starknet::class_hash::ClassHash",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "pause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "unpause",
+          inputs: [],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::integer::u256",
+          members: [
+            {
+              name: "low",
+              type: "core::integer::u128",
+            },
+            {
+              name: "high",
+              type: "core::integer::u128",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "burn",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::integer::u256>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::integer::u256>",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "batch_burn",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_ids",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::felt252>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::felt252>",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "mint",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+            },
+            {
+              name: "data",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "batch_mint",
+          inputs: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "token_ids",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+            },
+            {
+              name: "data",
+              type: "core::array::Span::<core::felt252>",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "struct",
+          name: "core::byte_array::ByteArray",
+          members: [
+            {
+              name: "data",
+              type: "core::array::Array::<core::bytes_31::bytes31>",
+            },
+            {
+              name: "pending_word",
+              type: "core::felt252",
+            },
+            {
+              name: "pending_word_len",
+              type: "core::integer::u32",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "set_token_data",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+            {
+              name: "expiry",
+              type: "core::integer::u64",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "function",
+          name: "get_token_data",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [
+            {
+              type: "(core::integer::u64, core::byte_array::ByteArray, core::integer::u256)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "get_details",
+          inputs: [],
+          outputs: [
+            {
+              type: "(core::byte_array::ByteArray, core::byte_array::ByteArray, core::array::Array::<core::integer::u256>, core::array::Array::<core::integer::u64>, core::array::Array::<core::byte_array::ByteArray>, core::array::Array::<core::integer::u256>)",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "enum",
+          name: "core::bool",
+          variants: [
+            {
+              name: "False",
+              type: "()",
+            },
+            {
+              name: "True",
+              type: "()",
+            },
+          ],
+        },
+        {
+          type: "function",
+          name: "is_valid",
+          inputs: [
+            {
+              name: "token_id",
+              type: "core::integer::u256",
+            },
+          ],
+          outputs: [
+            {
+              type: "core::bool",
+            },
+          ],
+          state_mutability: "view",
+        },
+        {
+          type: "function",
+          name: "set_details",
+          inputs: [
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+          outputs: [],
+          state_mutability: "external",
+        },
+        {
+          type: "impl",
+          name: "ERC1155MixinImpl",
+          interface_name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
+        },
+        {
+          type: "struct",
+          name: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+          members: [
+            {
+              name: "snapshot",
+              type: "@core::array::Array::<core::starknet::contract_address::ContractAddress>",
+            },
+          ],
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::token::erc1155::ERC1155ABI",
+          items: [
+            {
+              type: "function",
+              name: "balance_of",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balance_of_batch",
+              inputs: [
+                {
+                  name: "accounts",
+                  type: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+                },
+                {
+                  name: "token_ids",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "safe_transfer_from",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "value",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "safe_batch_transfer_from",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "token_ids",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "values",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "is_approved_for_all",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "set_approval_for_all",
+              inputs: [
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "approved",
+                  type: "core::bool",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "supports_interface",
+              inputs: [
+                {
+                  name: "interface_id",
+                  type: "core::felt252",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "uri",
+              inputs: [
+                {
+                  name: "token_id",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::byte_array::ByteArray",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOf",
+              inputs: [
+                {
+                  name: "account",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenId",
+                  type: "core::integer::u256",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::integer::u256",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "balanceOfBatch",
+              inputs: [
+                {
+                  name: "accounts",
+                  type: "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+                },
+                {
+                  name: "tokenIds",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "safeTransferFrom",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenId",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "value",
+                  type: "core::integer::u256",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "safeBatchTransferFrom",
+              inputs: [
+                {
+                  name: "from",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "to",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "tokenIds",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "values",
+                  type: "core::array::Span::<core::integer::u256>",
+                },
+                {
+                  name: "data",
+                  type: "core::array::Span::<core::felt252>",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "isApprovedForAll",
+              inputs: [
+                {
+                  name: "owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "setApprovalForAll",
+              inputs: [
+                {
+                  name: "operator",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+                {
+                  name: "approved",
+                  type: "core::bool",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "PausableImpl",
+          interface_name:
+            "openzeppelin_interfaces::security::pausable::IPausable",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::security::pausable::IPausable",
+          items: [
+            {
+              type: "function",
+              name: "is_paused",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::bool",
+                },
+              ],
+              state_mutability: "view",
+            },
+          ],
+        },
+        {
+          type: "impl",
+          name: "OwnableMixinImpl",
+          interface_name:
+            "openzeppelin_interfaces::access::ownable::OwnableABI",
+        },
+        {
+          type: "interface",
+          name: "openzeppelin_interfaces::access::ownable::OwnableABI",
+          items: [
+            {
+              type: "function",
+              name: "owner",
+              inputs: [],
+              outputs: [
+                {
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              state_mutability: "view",
+            },
+            {
+              type: "function",
+              name: "transfer_ownership",
+              inputs: [
+                {
+                  name: "new_owner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounce_ownership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "transferOwnership",
+              inputs: [
+                {
+                  name: "newOwner",
+                  type: "core::starknet::contract_address::ContractAddress",
+                },
+              ],
+              outputs: [],
+              state_mutability: "external",
+            },
+            {
+              type: "function",
+              name: "renounceOwnership",
+              inputs: [],
+              outputs: [],
+              state_mutability: "external",
+            },
+          ],
+        },
+        {
+          type: "constructor",
+          name: "constructor",
+          inputs: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+            },
+            {
+              name: "name",
+              type: "core::byte_array::ByteArray",
+            },
+            {
+              name: "metadata",
+              type: "core::byte_array::ByteArray",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferSingle",
+          kind: "struct",
+          members: [
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "id",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+            {
+              name: "value",
+              type: "core::integer::u256",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferBatch",
+          kind: "struct",
+          members: [
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "from",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "to",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "ids",
+              type: "core::array::Span::<core::integer::u256>",
+              kind: "data",
+            },
+            {
+              name: "values",
+              type: "core::array::Span::<core::integer::u256>",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::ApprovalForAll",
+          kind: "struct",
+          members: [
+            {
+              name: "owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "operator",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "approved",
+              type: "core::bool",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::URI",
+          kind: "struct",
+          members: [
+            {
+              name: "value",
+              type: "core::byte_array::ByteArray",
+              kind: "data",
+            },
+            {
+              name: "id",
+              type: "core::integer::u256",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_token::erc1155::erc1155::ERC1155Component::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "TransferSingle",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferSingle",
+              kind: "nested",
+            },
+            {
+              name: "TransferBatch",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::TransferBatch",
+              kind: "nested",
+            },
+            {
+              name: "ApprovalForAll",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::ApprovalForAll",
+              kind: "nested",
+            },
+            {
+              name: "URI",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::URI",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_introspection::src5::SRC5Component::Event",
+          kind: "enum",
+          variants: [],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Paused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+          kind: "struct",
+          members: [
+            {
+              name: "account",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_security::pausable::PausableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Paused",
+              type: "openzeppelin_security::pausable::PausableComponent::Paused",
+              kind: "nested",
+            },
+            {
+              name: "Unpaused",
+              type: "openzeppelin_security::pausable::PausableComponent::Unpaused",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+          kind: "struct",
+          members: [
+            {
+              name: "previous_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+            {
+              name: "new_owner",
+              type: "core::starknet::contract_address::ContractAddress",
+              kind: "key",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "OwnershipTransferred",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+              kind: "nested",
+            },
+            {
+              name: "OwnershipTransferStarted",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+          kind: "struct",
+          members: [
+            {
+              name: "class_hash",
+              type: "core::starknet::class_hash::ClassHash",
+              kind: "data",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "Upgraded",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+              kind: "nested",
+            },
+          ],
+        },
+        {
+          type: "event",
+          name: "contracts::InfiniRewardsCertificate::InfiniRewardsCertificate::Event",
+          kind: "enum",
+          variants: [
+            {
+              name: "ERC1155Event",
+              type: "openzeppelin_token::erc1155::erc1155::ERC1155Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "SRC5Event",
+              type: "openzeppelin_introspection::src5::SRC5Component::Event",
+              kind: "flat",
+            },
+            {
+              name: "PausableEvent",
+              type: "openzeppelin_security::pausable::PausableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "OwnableEvent",
+              type: "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+              kind: "flat",
+            },
+            {
+              name: "UpgradeableEvent",
+              type: "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+              kind: "flat",
+            },
+          ],
+        },
+      ],
+      classHash:
+        "0x7bcebcbefd8612ceeaaff95fd0b044d0e481688e5ddf908f93a842e5fc1f8a9",
     },
   },
 } as const;

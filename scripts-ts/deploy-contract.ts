@@ -70,6 +70,7 @@ const declareIfNot_NotWait = async (
         feeToken,
         isSierraContract
       );
+      // Let starknet.js handle resource bounds automatically for v3 transactions
       const { transaction_hash } = await deployer.declare(payload, {
         ...options,
         version: txVersion,

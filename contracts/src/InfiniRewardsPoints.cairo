@@ -3,11 +3,11 @@
 
 #[starknet::contract]
 mod InfiniRewardsPoints {
-    use openzeppelin::access::ownable::OwnableComponent;
-    use openzeppelin::security::pausable::PausableComponent;
-    use openzeppelin::token::erc20::ERC20Component;
-    use openzeppelin::upgrades::UpgradeableComponent;
-    use openzeppelin::upgrades::interface::IUpgradeable;
+    use openzeppelin_access::ownable::OwnableComponent;
+    use openzeppelin_security::pausable::PausableComponent;
+    use openzeppelin_token::erc20::ERC20Component;
+    use openzeppelin_upgrades::UpgradeableComponent;
+    use openzeppelin_interfaces::upgrades::IUpgradeable;
     use starknet::ClassHash;
     use starknet::ContractAddress;
     use starknet::storage::{StoragePointerReadAccess, StoragePointerWriteAccess};
@@ -17,6 +17,11 @@ mod InfiniRewardsPoints {
     component!(path: PausableComponent, storage: pausable, event: PausableEvent);
     component!(path: OwnableComponent, storage: ownable, event: OwnableEvent);
     component!(path: UpgradeableComponent, storage: upgradeable, event: UpgradeableEvent);
+
+    // ERC20 Configuration
+    impl ERC20ImmutableConfig of ERC20Component::ImmutableConfig {
+        const DECIMALS: u8 = 18;
+    }
 
     #[abi(embed_v0)]
     impl ERC20MixinImpl = ERC20Component::ERC20MixinImpl<ContractState>;
@@ -140,7 +145,7 @@ mod InfiniRewardsPoints {
 
         #[external(v0)]
         fn get_details(self: @ContractState) -> (ByteArray, ByteArray, ByteArray, u8, u256) {
-            (self.name.read(), self.symbol.read(), self.metadata.read(), self.decimals.read(), self.erc20.total_supply())
+            (self.name.read(), self.symbol.read(), self.metadata.read(), self.decimals.read(), self.erc20.ERC20_total_supply.read())
         }
     }
 }

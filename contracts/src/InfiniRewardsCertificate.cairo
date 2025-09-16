@@ -3,12 +3,12 @@
 
 #[starknet::contract]
 mod InfiniRewardsCertificate {
-    use openzeppelin::access::ownable::OwnableComponent;
-    use openzeppelin::introspection::src5::SRC5Component;
-    use openzeppelin::security::pausable::PausableComponent;
-    use openzeppelin::token::erc1155::ERC1155Component;
-    use openzeppelin::upgrades::UpgradeableComponent;
-    use openzeppelin::upgrades::interface::IUpgradeable;
+    use openzeppelin_access::ownable::OwnableComponent;
+    use openzeppelin_introspection::src5::SRC5Component;
+    use openzeppelin_security::pausable::PausableComponent;
+    use openzeppelin_token::erc1155::ERC1155Component;
+    use openzeppelin_upgrades::UpgradeableComponent;
+    use openzeppelin_interfaces::upgrades::IUpgradeable;
     use starknet::ClassHash;
     use starknet::{ContractAddress, get_caller_address};
     use starknet::storage::{

@@ -4,14 +4,21 @@ version = "0.1.1"
 edition = "2024_07"
 
 [dependencies]
-starknet = "2.11.1"
-openzeppelin = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v1.0.0" }
+starknet = "2.12.1"
+openzeppelin_access = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_account = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_interfaces = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_introspection = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_security = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_token = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_upgrades = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
+openzeppelin_utils = { git = "https://github.com/OpenZeppelin/cairo-contracts.git", tag = "v3.0.0-alpha.1" }
 
 [[target.starknet-contract]]
 casm = true
 
 [dev-dependencies]
-snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry", tag = "v0.27.0" }
+snforge_std = { git = "https://github.com/foundry-rs/starknet-foundry", tag = "v0.49.0" }
 
 [scripts]
 test = "snforge test"

@@ -38,49 +38,32 @@ export async function getTxVersion(
 ) {
   const { feeToken: feeTokenOptions, provider, deployer } = network;
 
-  //check the specified feeToken
-  const specifiedToken = feeTokenOptions.find(
-    (token) => token.name === feeToken
-  );
-  if (specifiedToken) {
+  // For RPC 0.8, we must use V3 transactions which require STRK
+  // Force STRK for v3 transactions
+  const strkToken = feeTokenOptions.find((token) => token.name === "strk");
+
+  if (strkToken) {
     const balance = await getBalance(
       deployer.address,
       provider,
-      specifiedToken.address
+      strkToken.address
     );
     if (balance > 0n) {
-      console.log(yellow(`Using ${feeToken.toUpperCase()} as fee token`));
-      return getTxVersionFromFeeToken(feeToken, isSierra);
+      console.log(yellow(`Using STRK as fee token (required for v3 transactions)`));
+      return TransactionVersion.V3;
     }
     console.log(
-      red(`${feeToken.toUpperCase()} balance is zero, trying other options`)
+      red(`STRK balance is zero. V3 transactions require STRK for fees. Please fund your wallet with STRK.`)
     );
   }
 
-  // Check other options
-  for (const token of feeTokenOptions) {
-    if (token.name !== feeToken) {
-      const balance = await getBalance(
-        deployer.address,
-        provider,
-        token.address
-      );
-      if (balance > 0n) {
-        console.log(yellow(`Using ${token.name.toUpperCase()} as fee token`));
-        return getTxVersionFromFeeToken(token.name, isSierra);
-      }
-      console.log(
-        red(`${token.name.toUpperCase()} balance is zero, trying next option`)
-      );
-    }
-  }
-
+  // For v3 transactions, we can only use STRK
   console.error(
     red(
-      "Error: Unable to find a fee token with sufficient balance. Please fund your wallet first."
+      "Error: V3 transactions require STRK for fees. Please fund your wallet with STRK on Sepolia."
     )
   );
-  throw new Error("No fee token with balance found");
+  throw new Error("V3 transactions require STRK for fees");
 }
 
 export async function getBalance(
@@ -119,11 +102,9 @@ export async function getBalance(
 }
 
 function getTxVersionFromFeeToken(feeToken: string, isSierra?: boolean) {
-  return feeToken === "strk"
-    ? TransactionVersion.V3
-    : isSierra
-    ? TransactionVersion.V2
-    : TransactionVersion.V1;
+  // RPC 0.8 only supports v3 transactions
+  // V3 transactions use STRK for fees
+  return TransactionVersion.V3;
 }
 
 /**

@@ -2,10 +2,10 @@
 
 #[starknet::contract]
 mod InfiniRewardsFactory {
-    use openzeppelin::access::ownable::OwnableComponent;
-    use openzeppelin::security::pausable::PausableComponent;
-    use openzeppelin::upgrades::UpgradeableComponent;
-    use openzeppelin::upgrades::interface::IUpgradeable;
+    use openzeppelin_access::ownable::OwnableComponent;
+    use openzeppelin_security::pausable::PausableComponent;
+    use openzeppelin_upgrades::UpgradeableComponent;
+    use openzeppelin_interfaces::upgrades::IUpgradeable;
     use starknet::{ClassHash, ContractAddress, get_caller_address};
     use starknet::storage::{
         StoragePointerReadAccess, StoragePointerWriteAccess
