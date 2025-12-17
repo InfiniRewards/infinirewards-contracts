@@ -3,6 +3,7 @@
 #[starknet::contract(account)]
 mod InfiniRewardsMerchantAccount {
     use contracts::components::account::AccountComponent;
+    use contracts::components::outside_execution::OutsideExecutionComponent;
     use openzeppelin_introspection::src5::SRC5Component;
     use openzeppelin_upgrades::UpgradeableComponent;
     use openzeppelin_interfaces::upgrades::IUpgradeable;
@@ -13,6 +14,7 @@ mod InfiniRewardsMerchantAccount {
     use contracts::interfaces::IInfiniRewardsMerchantAccount::IInfiniRewardsMerchantAccount;
 
     component!(path: AccountComponent, storage: account, event: AccountEvent);
+    component!(path: OutsideExecutionComponent, storage: outside_execution, event: OutsideExecutionEvent);
     component!(path: SRC5Component, storage: src5, event: SRC5Event);
     component!(path: UpgradeableComponent, storage: upgradeable, event: UpgradeableEvent);
 
@@ -30,6 +32,8 @@ mod InfiniRewardsMerchantAccount {
     impl PublicKeyCamelImpl = AccountComponent::PublicKeyCamelImpl<ContractState>;
     #[abi(embed_v0)]
     impl SRC5Impl = SRC5Component::SRC5Impl<ContractState>;
+    #[abi(embed_v0)]
+    impl OutsideExecutionImpl = OutsideExecutionComponent::OutsideExecutionImpl<ContractState>;
 
     impl AccountInternalImpl = AccountComponent::InternalImpl<ContractState>;
     impl UpgradeableInternalImpl = UpgradeableComponent::InternalImpl<ContractState>;
@@ -39,10 +43,13 @@ mod InfiniRewardsMerchantAccount {
         #[substorage(v0)]
         account: AccountComponent::Storage,
         #[substorage(v0)]
+        outside_execution: OutsideExecutionComponent::Storage,
+        #[substorage(v0)]
         src5: SRC5Component::Storage,
         #[substorage(v0)]
         upgradeable: UpgradeableComponent::Storage,
         metadata: ByteArray,
+        factory_address: ContractAddress,
         points_contracts: Vec<ContractAddress>,
         collectible_contracts: Vec<ContractAddress>,
         certificate_contracts: Vec<ContractAddress>,
@@ -54,14 +61,22 @@ mod InfiniRewardsMerchantAccount {
         #[flat]
         AccountEvent: AccountComponent::Event,
         #[flat]
+        OutsideExecutionEvent: OutsideExecutionComponent::Event,
+        #[flat]
         SRC5Event: SRC5Component::Event,
         #[flat]
         UpgradeableEvent: UpgradeableComponent::Event,
     }
 
     #[constructor]
-    fn constructor(ref self: ContractState, public_key: felt252) {
+    fn constructor(
+        ref self: ContractState,
+        public_key: felt252
+    ) {
         self.account.initializer(public_key);
+
+        // Store the factory address (caller during deployment)
+        self.factory_address.write(starknet::get_caller_address());
     }
 
     #[abi(embed_v0)]
@@ -75,22 +90,64 @@ mod InfiniRewardsMerchantAccount {
     #[abi(embed_v0)]
     impl IInfiniRewardsMerchantAccountImpl of IInfiniRewardsMerchantAccount<ContractState> {
         fn add_points_contract(ref self: ContractState, points_contract: ContractAddress) {
+            let caller = starknet::get_caller_address();
+            let self_address = starknet::get_contract_address();
+
+            // Access control:
+            // 1. Account itself can always add contracts
+            // 2. Factory can always add contracts (needed for SNIP-9 outside execution)
+            let is_self = caller == self_address;
+            let is_factory = caller == self.factory_address.read();
+
+            assert(is_self || is_factory, 'Unauthorized caller');
             self.points_contracts.push(points_contract);
         }
 
         fn add_collectible_contract(
             ref self: ContractState, collectible_contract: ContractAddress
         ) {
+            let caller = starknet::get_caller_address();
+            let self_address = starknet::get_contract_address();
+
+            // Access control:
+            // 1. Account itself can always add contracts
+            // 2. Factory can always add contracts (needed for SNIP-9 outside execution)
+            let is_self = caller == self_address;
+            let is_factory = caller == self.factory_address.read();
+
+            assert(is_self || is_factory, 'Unauthorized caller');
             self.collectible_contracts.push(collectible_contract);
         }
 
         fn add_certificate_contract(
             ref self: ContractState, certificate_contract: ContractAddress
         ) {
+            let caller = starknet::get_caller_address();
+            let self_address = starknet::get_contract_address();
+
+            // Access control:
+            // 1. Account itself can always add contracts
+            // 2. Factory can always add contracts (needed for SNIP-9 outside execution)
+            let is_self = caller == self_address;
+            let is_factory = caller == self.factory_address.read();
+
+            assert(is_self || is_factory, 'Unauthorized caller');
             self.certificate_contracts.push(certificate_contract);
         }
 
         fn set_metadata(ref self: ContractState, metadata: ByteArray) {
+            let caller = starknet::get_caller_address();
+            let self_address = starknet::get_contract_address();
+
+            // Access control:
+            // 1. Account itself can always set metadata
+            // 2. Factory can ONLY set metadata when it's empty (first time)
+            let is_self = caller == self_address;
+            let current_metadata = self.metadata.read();
+            let is_factory_first_time = caller == self.factory_address.read()
+                && current_metadata.len() == 0;
+
+            assert(is_self || is_factory_first_time, 'Unauthorized caller');
             self.metadata.write(metadata);
         }
     }

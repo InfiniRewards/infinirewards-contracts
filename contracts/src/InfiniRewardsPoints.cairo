@@ -132,6 +132,14 @@ mod InfiniRewardsPoints {
         }
 
         #[external(v0)]
+        fn burn_from(ref self: ContractState, account: ContractAddress, value: u256) {
+            // Only contract owner (merchant) can burn from user accounts
+            self.ownable.assert_only_owner();
+            // Burn tokens from the specified account
+            self.erc20.burn(account, value);
+        }
+
+        #[external(v0)]
         fn mint(ref self: ContractState, recipient: ContractAddress, amount: u256) {
             self.ownable.assert_only_owner();
             self.erc20.mint(recipient, amount);

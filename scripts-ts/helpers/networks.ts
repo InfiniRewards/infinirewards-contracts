@@ -18,7 +18,12 @@ const providerDevnet =
 const deployerDevnet =
   ACCOUNT_ADDRESS_DEVNET &&
   PRIVATE_KEY_DEVNET &&
-  new Account(providerDevnet, ACCOUNT_ADDRESS_DEVNET, PRIVATE_KEY_DEVNET);
+  providerDevnet &&
+  new Account({
+    address: ACCOUNT_ADDRESS_DEVNET,
+    signer: PRIVATE_KEY_DEVNET,
+    provider: providerDevnet
+  });
 
 const ETH_TOKEN_ADDRESS_DEVNET =
   "0x49D36570D4E46F48E99674BD3FCC84644DDD6B96F7C741B1562B82F9E004DC7";
@@ -32,11 +37,12 @@ const providerSepolia =
 const deployerSepolia =
   process.env.ACCOUNT_ADDRESS_SEPOLIA &&
   process.env.PRIVATE_KEY_SEPOLIA &&
-  new Account(
-    providerSepolia,
-    process.env.ACCOUNT_ADDRESS_SEPOLIA,
-    process.env.PRIVATE_KEY_SEPOLIA
-  );
+  providerSepolia &&
+  new Account({
+    address: process.env.ACCOUNT_ADDRESS_SEPOLIA,
+    signer: process.env.PRIVATE_KEY_SEPOLIA,
+    provider: providerSepolia
+  });
 
 const ETH_TOKEN_ADDRESS =
   "0x049d36570d4e46f48e99674bd3fcc84644ddd6b96f7c741b1562b82f9e004dc7";
@@ -50,11 +56,12 @@ const providerMainnet =
 const deployerMainnet =
   process.env.ACCOUNT_ADDRESS_MAINNET &&
   process.env.PRIVATE_KEY_MAINNET &&
-  new Account(
-    providerMainnet,
-    process.env.ACCOUNT_ADDRESS_MAINNET,
-    process.env.PRIVATE_KEY_MAINNET
-  );
+  providerMainnet &&
+  new Account({
+    address: process.env.ACCOUNT_ADDRESS_MAINNET,
+    signer: process.env.PRIVATE_KEY_MAINNET,
+    provider: providerMainnet
+  });
 
 const feeTokenOptions = {
   devnet: [

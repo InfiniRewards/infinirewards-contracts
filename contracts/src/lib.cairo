@@ -16,6 +16,7 @@ mod interfaces {
 
 pub mod components {
     pub mod account;
+    pub mod outside_execution;
 }
 
 pub mod utils {

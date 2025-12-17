@@ -113,7 +113,11 @@ const upgradeContract = async () => {
     throw new Error(`Could not get ABI for contract at ${contractAddress}`);
   }
 
-  const contract = new Contract(contractAbi, contractAddress, deployer);
+  const contract = new Contract({
+    abi: contractAbi,
+    address: contractAddress,
+    providerOrAccount: deployer
+  });
   const calls: Call[] = [];
 
   if (newClassHash) {

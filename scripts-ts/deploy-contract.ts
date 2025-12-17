@@ -6,11 +6,11 @@ import {
   CallData,
   stark,
   RawArgs,
-  transaction,
   extractContractHashes,
   DeclareContractPayload,
   UniversalDetails,
   isSierra,
+  defaultDeployer,
 } from "starknet";
 import { DeployContractParams, Network } from "./types";
 import { green, red, yellow } from "./helpers/colorize-log";
@@ -94,7 +94,7 @@ const deployContract_NotWait = async (payload: {
   constructorCalldata: RawArgs;
 }) => {
   try {
-    const { calls, addresses } = transaction.buildUDCCall(
+    const { calls, addresses } = defaultDeployer.buildDeployerCall(
       payload,
       deployer.address
     );
@@ -103,7 +103,7 @@ const deployContract_NotWait = async (payload: {
       contractAddress: addresses[0],
     };
   } catch (error) {
-    console.error(red("Error building UDC call:"), error);
+    console.error(red("Error building deployer call:"), error);
     throw error;
   }
 };

@@ -83,7 +83,11 @@ export async function getBalance(
   
   while (retries > 0) {
     try {
-      const contract = new Contract(erc20ABI, tokenAddress, provider);
+      const contract = new Contract({
+        abi: erc20ABI,
+        address: tokenAddress,
+        providerOrAccount: provider
+      });
       const { balance } = await contract.balanceOf(account);
       return uint256.uint256ToBN(balance);
     } catch (error) {

@@ -161,19 +161,10 @@ mod InfiniRewardsFactory {
             symbol: ByteArray,
             decimals: u8
         ) -> (ContractAddress, ContractAddress) {
-            // Create user account first
-            // assert(self.merchant_accounts.read(phone_number_hash).is_zero(), 'Merchant already exists');
-            
-            let mut constructor_calldata = ArrayTrait::new();
-            public_key.serialize(ref constructor_calldata);
-            let (merchant, _) = deploy_syscall(
-                    self.infini_rewards_merchant_account_hash.read(), public_key, constructor_calldata.span(), true
-                )
-                    .expect('failed to deploy account');
-
-            // Deploy Points Contract within Merchant Account
+            // Step 1: Deploy Points Contract first with factory as temporary owner
             let mut points_calldata = ArrayTrait::new();
-            merchant.serialize(ref points_calldata);
+            let factory_address = starknet::get_contract_address();
+            factory_address.serialize(ref points_calldata); // Factory is temporary owner
             name.serialize(ref points_calldata);
             symbol.serialize(ref points_calldata);
             let mut points_metadata = Default::default();
@@ -181,16 +172,38 @@ mod InfiniRewardsFactory {
             points_metadata.serialize(ref points_calldata);
             decimals.serialize(ref points_calldata);
             let (points_contract, _) = deploy_syscall(
-                    self.infini_rewards_points_hash.read(), 
-                    0, 
-                    points_calldata.span(), 
+                    self.infini_rewards_points_hash.read(),
+                    0,
+                    points_calldata.span(),
                     false
                 )
                     .expect('failed to deploy points');
-            // Initialize merchant account with points contract
+
+            // Step 2: Deploy Merchant Account with just public_key
+            // Factory address is automatically stored in the merchant account constructor
+            let mut constructor_calldata = ArrayTrait::new();
+            public_key.serialize(ref constructor_calldata);
+            let (merchant, _) = deploy_syscall(
+                    self.infini_rewards_merchant_account_hash.read(),
+                    public_key,
+                    constructor_calldata.span(),
+                    true
+                )
+                    .expect('failed to deploy account');
+
+            // Step 3: Initialize merchant account by adding first points contract
+            // Factory is authorized to call this ONCE (when points_contracts is empty)
             let merchant_account_instance = IInfiniRewardsMerchantAccountDispatcher { contract_address: merchant };
             merchant_account_instance.add_points_contract(points_contract);
-            merchant_account_instance.set_metadata(metadata.clone());
+            merchant_account_instance.set_metadata(metadata);
+
+            // Step 4: Transfer points contract ownership from factory to merchant
+            let mut calldata = array![merchant.into()];
+            starknet::syscalls::call_contract_syscall(
+                points_contract,
+                selector!("transfer_ownership"),
+                calldata.span()
+            ).expect('ownership transfer failed');
 
             self.emit(MerchantCreated { merchant, points_contract });
             (merchant, points_contract)

@@ -61,7 +61,7 @@ pub mod AccountComponent {
     use core::num::traits::Zero;
     use core::poseidon::PoseidonTrait;
     use openzeppelin_interfaces::account::accounts as interface;
-    use openzeppelin_account::utils::{execute_single_call, is_tx_version_valid, is_valid_stark_signature};
+    use openzeppelin_account::utils::{is_tx_version_valid, is_valid_stark_signature};
     use openzeppelin_introspection::src5::SRC5Component;
     use openzeppelin_introspection::src5::SRC5Component::InternalTrait as SRC5InternalTrait;
     use openzeppelin_introspection::src5::SRC5Component::SRC5Impl;
@@ -145,6 +145,20 @@ pub mod AccountComponent {
         pub const INVALID_SESSION_SIGNATURE: felt252 = 'Invalid session signature';
         pub const INVALID_SELECTOR: felt252 = 'Invalid selector';
         pub const SESSION_EXPIRED: felt252 = 'Session expired';
+    }
+
+    /// Helper function to execute a single call
+    fn execute_single_call(call: @Call) {
+        match starknet::syscalls::call_contract_syscall(
+            *call.to,
+            *call.selector,
+            *call.calldata
+        ) {
+            Result::Ok(_) => {},
+            Result::Err(_err) => {
+                panic!("Call failed")
+            }
+        }
     }
 
     #[starknet::interface]
